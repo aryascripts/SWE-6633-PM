@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectManagementTool
-{
+namespace ProjectManagementTool {
     public partial class CreateRequirement : Form
     {
         public CreateRequirement()

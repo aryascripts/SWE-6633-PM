@@ -1,12 +1,15 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManagement {
-	class Person {
+namespace ProjectManagementTool {
+	public class Person {
 
+		[BsonId]
+		public Guid PersonId { get; set; }
 		public String fName { get; set; }
 		public String lName { get; set; }
 		public String title { get; set; }
@@ -21,11 +24,6 @@ namespace ProjectManagement {
 			fName = f;
 			lName = l;
 			title = t;
-
-
-		}
-
-		public void addPerson(Person p) {
 		}
 	}
 }
