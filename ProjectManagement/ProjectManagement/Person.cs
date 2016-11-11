@@ -9,10 +9,10 @@ namespace ProjectManagementTool {
 	public class Person {
 
 		[BsonId]
-		private Guid PersonId { get; set; }
-		private String fName { get; set; }
-		private String lName { get; set; }
-		private String title { get; set; }
+		public Guid PersonId { get; set; }
+		public String fName { get; private set; }
+		public String lName { get; private set; }
+		public String title { get; private set; }
 
 		public Person() {
 			fName = null;
