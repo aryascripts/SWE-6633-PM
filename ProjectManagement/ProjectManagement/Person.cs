@@ -18,6 +18,7 @@ namespace ProjectManagementTool {
 			fName = null;
 			lName = null;
 			title = null;
+			PersonId = Guid.NewGuid();
 		}
 
 		public Person(String f, String l, String t) {

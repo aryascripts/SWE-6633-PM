@@ -44,7 +44,6 @@ namespace ProjectManagementTool {
 		}
 
 		private void buttonCount_Click(object sender, EventArgs e) {
-			allPersons.Clear();
 			allPersons = data.allPersons();
 			Console.Clear();
 			foreach (Person person in allPersons) {
