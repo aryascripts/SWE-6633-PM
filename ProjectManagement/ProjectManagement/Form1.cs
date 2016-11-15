@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace ProjectManagementTool {
 	public partial class Form1 : Form {
 		DataManagement data;
-		List<Person> allPersons;
+		List<Person> allPersons = new List<Person>();
+        List<Requirement> allReqs = new List<Requirement>();
+        List<Risk> allRisks = new List<Risk>();
 
 		public Form1() {
 			InitializeComponent();

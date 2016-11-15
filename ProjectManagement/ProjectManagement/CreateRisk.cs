@@ -15,5 +15,9 @@ namespace ProjectManagementTool {
         {
             InitializeComponent();
         }
+        //The CreateRisks form is missing a cost of mitigation factor, and both it and the probability 
+        //need to be form fills not dropdown
+
+
     }
 }

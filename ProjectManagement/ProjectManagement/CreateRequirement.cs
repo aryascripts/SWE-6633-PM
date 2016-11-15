@@ -25,5 +25,13 @@ namespace ProjectManagementTool {
         {
 
         }
+
+        private void buttonReqSave_Click(object sender, EventArgs e)
+        {
+            //Parses the text from the Requirements Category text box into an enum
+            RequirementCategory reqCat = (RequirementCategory) Enum.Parse(typeof(RequirementCategory), comboBoxReqType.Text);
+            //Creates the requirement object
+            Requirement reqOut = new Requirement(reqDescription.Text, Convert.ToInt32(comboBoxReqPriority.Text), reqCat);
+        }
     }
 }
