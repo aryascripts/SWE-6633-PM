@@ -13,6 +13,7 @@ namespace ProjectManagementTool {
 
 	public class Requirement {
 
+		[BsonId]
 		public ObjectId RequirementId { get; set; }
 		public String description { get; private set; }
 		public int priority { get; private set; }

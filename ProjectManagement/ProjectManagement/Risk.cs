@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ProjectManagementTool {
 	public class Risk {
 
+		[BsonId]
 		public Guid RiskId { get; set; }
 		public String description { get; private set; }
 		public float likelihood { get; private set; }

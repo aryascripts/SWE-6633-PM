@@ -1,17 +1,23 @@
 ﻿using System;
+using LiteDB;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectManagementTool {
-	class Project {
-		public Person projectManager { get; private set; }
-		public Person projectOwner { get; private set; }
+	public class Project {
 
-		public List<Requirement> requirements { get; private set; }
-		public List<Risk> risks { get; private set; }
-		public List<Person> team { get; private set; }
+		[BsonId]
+		public Guid ProjectID { get; set; }
+
+		public String projectName { get; set; }
+		public Person projectManager { get; set; }
+		public Person projectOwner { get; set; }
+
+		public List<Requirement> requirements { get; set; }
+		public List<Risk> risks { get; set; }
+		public List<Person> team { get; set; }
 
 		public Project() {
 			projectManager = null;
@@ -22,8 +28,14 @@ namespace ProjectManagementTool {
 			team = new List<Person>();
 		}
 
-		public Project(Person owner, Person manager) {
+		public Project(Person owner, Person manager, String name) {
+			projectName = name;
+			projectManager = manager;
+			projectOwner = owner;
 
+			requirements = new List<Requirement>();
+			risks = new List<Risk>();
+			team = new List<Person>();
 		}
 
 		public void addRequirement(Requirement r) {

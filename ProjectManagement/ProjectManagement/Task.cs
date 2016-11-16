@@ -16,6 +16,7 @@ namespace ProjectManagementTool {
 	}
 
 	public class Task {
+		[BsonId]
 		public Guid TaskId;
 		public string description { get; set; }
 		public Person taskOwner { get; private set; }
