@@ -21,18 +21,10 @@ namespace ProjectManagementTool {
 			InitializeComponent();
 			data = new ProjectManagementTool.DataManagement();
 
-			Person p = new Person("First", "Last", "Title");
-			Project pro = new Project(p, p, "Project Name");
-
-			data.addProject(pro);
-			data.addPerson(p);
-
 			allPersons = data.allPersons();
 			allProjects = data.allProjects();
 
-			var bindingProjects = new BindingList<Project>(allProjects);
-			this.allProjectsUI.DataSource = bindingProjects;
-
+			setUpDataGrid(allProjects);
 			
 		}
 
@@ -45,18 +37,39 @@ namespace ProjectManagementTool {
 		}
 
 		private void buttonNew_Click(object sender, EventArgs e) {
-			Person p = new Person("First", "Last", "Title");
-			//data.addPerson(p);
+			this.Hide();
+			Project p = new Project(new Person("CHANGE", "ME", "PLEASE"), new Person("CHANGE", "ME", "PLEASE"), "Change Me");
+			data.addProject(p);
+			var form2 = new Form2(p);
+			form2.Closed += (s, args) => this.Close();
+			form2.Show();
 
-			p = new Person("Aman", "Bhimani", "PM");
-			//data.addPerson(p);
 		}
 
 		private void buttonOpen_Click(object sender, EventArgs e) {
-			allPersons = data.allPersons();
-			Console.Clear();
-			foreach (Person person in allPersons) {
-				Console.WriteLine(person.PersonId + " " + person.fName + " " + person.lName + " is a " + person.title);
+			this.Hide();
+			var form2 = new Form2(allProjects[this.projectsDataGrid.CurrentCell.RowIndex]);
+			form2.Closed += (s, args) => this.Close();
+			form2.Show();
+
+		}
+
+		private void setUpDataGrid(List<Project> projects) {
+			var dataGrid = this.projectsDataGrid;
+
+			dataGrid.ReadOnly = true;
+
+			dataGrid.ColumnCount = 3;
+			dataGrid.Columns[0].Name = "ID";
+			dataGrid.Columns[1].Name = "Project Name";
+			dataGrid.Columns[2].Name = "Project Owner";
+
+			string[] row;
+			int i = 0;
+
+			foreach(Project p in projects) {
+				row = new string[] { ""+i++, p.projectName, p.projectOwner.fName+" "+p.projectOwner.lName };
+				dataGrid.Rows.Add(row);
 			}
 		}
 	}

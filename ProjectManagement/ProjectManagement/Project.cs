@@ -14,6 +14,7 @@ namespace ProjectManagementTool {
 		public String projectName { get; set; }
 		public Person projectManager { get; set; }
 		public Person projectOwner { get; set; }
+		public String projectDescription { get; set; }
 
 		public List<Requirement> requirements { get; set; }
 		public List<Risk> risks { get; set; }
@@ -48,6 +49,10 @@ namespace ProjectManagementTool {
 
 		public void addTeamMember(Person p) {
 			team.Add(p);
+		}
+
+		public void setDescription(String s) {
+			projectDescription = s;
 		}
 	}
 }

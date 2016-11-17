@@ -11,10 +11,28 @@ using System.Windows.Forms;
 namespace ProjectManagementTool {
     public partial class Form2 : Form
     {
+
+		private Project currentProject;
+
         public Form2()
         {
             InitializeComponent();
         }
+
+		public Form2(Project p) {
+			InitializeComponent();
+			currentProject = p;
+
+			this.UI_projectDescription.ReadOnly = true;
+
+			refresh(currentProject);
+
+		}
+
+		public void refresh(Project p) {
+			currentProject = p;
+			setBasicProjectProperties();
+		}
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -45,5 +63,16 @@ namespace ProjectManagementTool {
         {
 
         }
-    }
+
+		private void setBasicProjectProperties() {
+			this.UI_projectDescription.Text = currentProject.projectDescription;
+			this.UI_projectLabel.Text = currentProject.projectName;
+			this.UI_projectOwner.Text = currentProject.projectOwner.fName + " " + currentProject.projectOwner.lName;
+		}
+
+		private void UI_editButton_Click(object sender, EventArgs e) {
+			var formProjectBasics = new ProjectBasics(currentProject, this);
+			formProjectBasics.Show();
+		}
+	}
 }
