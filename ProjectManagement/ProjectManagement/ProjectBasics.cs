@@ -63,7 +63,6 @@ namespace ProjectManagementTool {
 			currentProject.projectOwner = persons[this.UI_personDataGrid.CurrentCell.RowIndex];
 
 			data.updateProject(currentProject);
-			lastWindow.refresh(currentProject);
 			this.Close();
 		}
 

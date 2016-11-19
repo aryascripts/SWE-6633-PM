@@ -59,6 +59,12 @@
     <Compile Include="AddPerson.Designer.cs">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTeamMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTeamMember.Designer.cs">
+      <DependentUpon>AddTeamMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateRequirement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +102,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRefreshable.cs" />
     <Compile Include="ProjectBasics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,9 @@
     <Compile Include="Task.cs" />
     <EmbeddedResource Include="AddPerson.resx">
       <DependentUpon>AddPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTeamMember.resx">
+      <DependentUpon>AddTeamMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRequirement.resx">
       <DependentUpon>CreateRequirement.cs</DependentUpon>

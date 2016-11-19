@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
 			this.projectOverview = new System.Windows.Forms.GroupBox();
+			this.UI_projectDescription = new System.Windows.Forms.RichTextBox();
+			this.UI_projectOwner = new System.Windows.Forms.Label();
+			this.UI_projectLabel = new System.Windows.Forms.Label();
 			this.UI_editButton = new System.Windows.Forms.Button();
 			this.labelDescription = new System.Windows.Forms.Label();
 			this.labelprojectOwner = new System.Windows.Forms.Label();
@@ -52,13 +55,9 @@
 			this.RequirementEdit = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.RequirementDelete = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.tabPageMembers = new System.Windows.Forms.TabPage();
-			this.buttonAddExistingPerson = new System.Windows.Forms.Button();
-			this.buttonCreateUser = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.TeamMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TeamMemberRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.EditViewMember = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.DeleteMember = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.UI_deleteTeamMemberButton = new System.Windows.Forms.Button();
+			this.UI_AddMemberBtn = new System.Windows.Forms.Button();
+			this.UI_teamDataGrid = new System.Windows.Forms.DataGridView();
 			this.tabPageHours = new System.Windows.Forms.TabPage();
 			this.addProjectHours = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -69,16 +68,13 @@
 			this.ProjectMng = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControlHours = new System.Windows.Forms.TabControl();
-			this.UI_projectLabel = new System.Windows.Forms.Label();
-			this.UI_projectOwner = new System.Windows.Forms.Label();
-			this.UI_projectDescription = new System.Windows.Forms.RichTextBox();
 			this.projectOverview.SuspendLayout();
 			this.tabPageRisk.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
 			this.tabPageRequirements.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridRequirements)).BeginInit();
 			this.tabPageMembers.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.UI_teamDataGrid)).BeginInit();
 			this.tabPageHours.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.tabControlHours.SuspendLayout();
@@ -102,6 +98,32 @@
 			this.projectOverview.TabStop = false;
 			this.projectOverview.Text = "Project Overvew";
 			this.projectOverview.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// UI_projectDescription
+			// 
+			this.UI_projectDescription.Location = new System.Drawing.Point(11, 199);
+			this.UI_projectDescription.Name = "UI_projectDescription";
+			this.UI_projectDescription.Size = new System.Drawing.Size(249, 170);
+			this.UI_projectDescription.TabIndex = 4;
+			this.UI_projectDescription.Text = "";
+			// 
+			// UI_projectOwner
+			// 
+			this.UI_projectOwner.AutoSize = true;
+			this.UI_projectOwner.Location = new System.Drawing.Point(14, 123);
+			this.UI_projectOwner.Name = "UI_projectOwner";
+			this.UI_projectOwner.Size = new System.Drawing.Size(46, 17);
+			this.UI_projectOwner.TabIndex = 3;
+			this.UI_projectOwner.Text = "label2";
+			// 
+			// UI_projectLabel
+			// 
+			this.UI_projectLabel.AutoSize = true;
+			this.UI_projectLabel.Location = new System.Drawing.Point(11, 52);
+			this.UI_projectLabel.Name = "UI_projectLabel";
+			this.UI_projectLabel.Size = new System.Drawing.Size(46, 17);
+			this.UI_projectLabel.TabIndex = 2;
+			this.UI_projectLabel.Text = "label2";
 			// 
 			// UI_editButton
 			// 
@@ -304,9 +326,9 @@
 			// 
 			// tabPageMembers
 			// 
-			this.tabPageMembers.Controls.Add(this.buttonAddExistingPerson);
-			this.tabPageMembers.Controls.Add(this.buttonCreateUser);
-			this.tabPageMembers.Controls.Add(this.dataGridView1);
+			this.tabPageMembers.Controls.Add(this.UI_deleteTeamMemberButton);
+			this.tabPageMembers.Controls.Add(this.UI_AddMemberBtn);
+			this.tabPageMembers.Controls.Add(this.UI_teamDataGrid);
 			this.tabPageMembers.Location = new System.Drawing.Point(4, 25);
 			this.tabPageMembers.Margin = new System.Windows.Forms.Padding(4);
 			this.tabPageMembers.Name = "tabPageMembers";
@@ -317,62 +339,36 @@
 			this.tabPageMembers.UseVisualStyleBackColor = true;
 			this.tabPageMembers.Click += new System.EventHandler(this.tabPage2_Click);
 			// 
-			// buttonAddExistingPerson
+			// UI_deleteTeamMemberButton
 			// 
-			this.buttonAddExistingPerson.Location = new System.Drawing.Point(601, 481);
-			this.buttonAddExistingPerson.Margin = new System.Windows.Forms.Padding(2);
-			this.buttonAddExistingPerson.Name = "buttonAddExistingPerson";
-			this.buttonAddExistingPerson.Size = new System.Drawing.Size(133, 26);
-			this.buttonAddExistingPerson.TabIndex = 2;
-			this.buttonAddExistingPerson.Text = "Add Existing";
-			this.buttonAddExistingPerson.UseVisualStyleBackColor = true;
+			this.UI_deleteTeamMemberButton.Location = new System.Drawing.Point(607, 481);
+			this.UI_deleteTeamMemberButton.Margin = new System.Windows.Forms.Padding(4);
+			this.UI_deleteTeamMemberButton.Name = "UI_deleteTeamMemberButton";
+			this.UI_deleteTeamMemberButton.Size = new System.Drawing.Size(125, 28);
+			this.UI_deleteTeamMemberButton.TabIndex = 2;
+			this.UI_deleteTeamMemberButton.Text = "Delete Selected";
+			this.UI_deleteTeamMemberButton.UseVisualStyleBackColor = true;
+			this.UI_deleteTeamMemberButton.Click += new System.EventHandler(this.UI_deleteTeamMemberButton_Click);
 			// 
-			// buttonCreateUser
+			// UI_AddMemberBtn
 			// 
-			this.buttonCreateUser.Location = new System.Drawing.Point(740, 481);
-			this.buttonCreateUser.Margin = new System.Windows.Forms.Padding(4);
-			this.buttonCreateUser.Name = "buttonCreateUser";
-			this.buttonCreateUser.Size = new System.Drawing.Size(125, 28);
-			this.buttonCreateUser.TabIndex = 1;
-			this.buttonCreateUser.Text = "Create New";
-			this.buttonCreateUser.UseVisualStyleBackColor = true;
-			this.buttonCreateUser.Click += new System.EventHandler(this.buttonCreateUser_Click);
+			this.UI_AddMemberBtn.Location = new System.Drawing.Point(740, 481);
+			this.UI_AddMemberBtn.Margin = new System.Windows.Forms.Padding(4);
+			this.UI_AddMemberBtn.Name = "UI_AddMemberBtn";
+			this.UI_AddMemberBtn.Size = new System.Drawing.Size(125, 28);
+			this.UI_AddMemberBtn.TabIndex = 1;
+			this.UI_AddMemberBtn.Text = "Create New";
+			this.UI_AddMemberBtn.UseVisualStyleBackColor = true;
+			this.UI_AddMemberBtn.Click += new System.EventHandler(this.buttonCreateUser_Click);
 			// 
-			// dataGridView1
+			// UI_teamDataGrid
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TeamMemberName,
-            this.TeamMemberRole,
-            this.EditViewMember,
-            this.DeleteMember});
-			this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(861, 471);
-			this.dataGridView1.TabIndex = 0;
-			// 
-			// TeamMemberName
-			// 
-			this.TeamMemberName.HeaderText = "Name";
-			this.TeamMemberName.Name = "TeamMemberName";
-			// 
-			// TeamMemberRole
-			// 
-			this.TeamMemberRole.HeaderText = "Role";
-			this.TeamMemberRole.Name = "TeamMemberRole";
-			// 
-			// EditViewMember
-			// 
-			this.EditViewMember.HeaderText = "Edit/View";
-			this.EditViewMember.Name = "EditViewMember";
-			this.EditViewMember.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.EditViewMember.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			// 
-			// DeleteMember
-			// 
-			this.DeleteMember.HeaderText = "Delete";
-			this.DeleteMember.Name = "DeleteMember";
+			this.UI_teamDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.UI_teamDataGrid.Location = new System.Drawing.Point(4, 4);
+			this.UI_teamDataGrid.Margin = new System.Windows.Forms.Padding(4);
+			this.UI_teamDataGrid.Name = "UI_teamDataGrid";
+			this.UI_teamDataGrid.Size = new System.Drawing.Size(861, 471);
+			this.UI_teamDataGrid.TabIndex = 0;
 			// 
 			// tabPageHours
 			// 
@@ -457,37 +453,11 @@
 			this.tabControlHours.Size = new System.Drawing.Size(879, 543);
 			this.tabControlHours.TabIndex = 1;
 			// 
-			// UI_projectLabel
-			// 
-			this.UI_projectLabel.AutoSize = true;
-			this.UI_projectLabel.Location = new System.Drawing.Point(11, 52);
-			this.UI_projectLabel.Name = "UI_projectLabel";
-			this.UI_projectLabel.Size = new System.Drawing.Size(46, 17);
-			this.UI_projectLabel.TabIndex = 2;
-			this.UI_projectLabel.Text = "label2";
-			// 
-			// UI_projectOwner
-			// 
-			this.UI_projectOwner.AutoSize = true;
-			this.UI_projectOwner.Location = new System.Drawing.Point(14, 123);
-			this.UI_projectOwner.Name = "UI_projectOwner";
-			this.UI_projectOwner.Size = new System.Drawing.Size(46, 17);
-			this.UI_projectOwner.TabIndex = 3;
-			this.UI_projectOwner.Text = "label2";
-			// 
-			// UI_projectDescription
-			// 
-			this.UI_projectDescription.Location = new System.Drawing.Point(11, 199);
-			this.UI_projectDescription.Name = "UI_projectDescription";
-			this.UI_projectDescription.Size = new System.Drawing.Size(249, 170);
-			this.UI_projectDescription.TabIndex = 4;
-			this.UI_projectDescription.Text = "";
-			// 
 			// Form2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1205, 611);
+			this.ClientSize = new System.Drawing.Size(1205, 565);
 			this.Controls.Add(this.tabControlHours);
 			this.Controls.Add(this.projectOverview);
 			this.Margin = new System.Windows.Forms.Padding(4);
@@ -500,7 +470,7 @@
 			this.tabPageRequirements.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridRequirements)).EndInit();
 			this.tabPageMembers.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.UI_teamDataGrid)).EndInit();
 			this.tabPageHours.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.tabControlHours.ResumeLayout(false);
@@ -534,13 +504,8 @@
 		private System.Windows.Forms.DataGridViewButtonColumn RequirementEdit;
 		private System.Windows.Forms.DataGridViewButtonColumn RequirementDelete;
 		private System.Windows.Forms.TabPage tabPageMembers;
-		private System.Windows.Forms.Button buttonAddExistingPerson;
-		private System.Windows.Forms.Button buttonCreateUser;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TeamMemberName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TeamMemberRole;
-		private System.Windows.Forms.DataGridViewButtonColumn EditViewMember;
-		private System.Windows.Forms.DataGridViewButtonColumn DeleteMember;
+		private System.Windows.Forms.Button UI_AddMemberBtn;
+		private System.Windows.Forms.DataGridView UI_teamDataGrid;
 		private System.Windows.Forms.TabPage tabPageHours;
 		private System.Windows.Forms.Button addProjectHours;
 		private System.Windows.Forms.DataGridView dataGridView2;
@@ -554,5 +519,6 @@
 		private System.Windows.Forms.RichTextBox UI_projectDescription;
 		private System.Windows.Forms.Label UI_projectOwner;
 		private System.Windows.Forms.Label UI_projectLabel;
+		private System.Windows.Forms.Button UI_deleteTeamMemberButton;
 	}
 }

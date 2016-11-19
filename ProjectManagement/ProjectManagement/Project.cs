@@ -21,12 +21,7 @@ namespace ProjectManagementTool {
 		public List<Person> team { get; set; }
 
 		public Project() {
-			projectManager = null;
-			projectOwner = null;
 
-			requirements = new List<Requirement>();
-			risks = new List<Risk>();
-			team = new List<Person>();
 		}
 
 		public Project(Person owner, Person manager, String name) {
@@ -34,6 +29,10 @@ namespace ProjectManagementTool {
 			projectManager = manager;
 			projectOwner = owner;
 
+			init();
+		}
+
+		private void init() {
 			requirements = new List<Requirement>();
 			risks = new List<Risk>();
 			team = new List<Person>();
@@ -49,6 +48,10 @@ namespace ProjectManagementTool {
 
 		public void addTeamMember(Person p) {
 			team.Add(p);
+		}
+
+		public void removeTeamMember(Person p) {
+			team.Remove(p);
 		}
 
 		public void setDescription(String s) {

@@ -56,5 +56,17 @@ namespace ProjectManagementTool {
 				projectsCollection.Update(p);
 			}
 		}
+
+		public Project getProject(Guid x) {
+			Project project;
+			using (var db = new LiteDatabase(database)) {
+				var projectsCollection = db.GetCollection<Project>("projects");
+
+				project = projectsCollection.FindById((BsonValue)x);
+
+				Console.WriteLine(project.projectDescription);
+			}
+			return project;
+		}
 	}
 }

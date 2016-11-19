@@ -38,9 +38,7 @@ namespace ProjectManagementTool {
 
 		private void buttonNew_Click(object sender, EventArgs e) {
 			this.Hide();
-			Project p = new Project(new Person("CHANGE", "ME", "PLEASE"), new Person("CHANGE", "ME", "PLEASE"), "Change Me");
-			data.addProject(p);
-			var form2 = new Form2(p);
+			var form2 = new Form2();
 			form2.Closed += (s, args) => this.Close();
 			form2.Show();
 
