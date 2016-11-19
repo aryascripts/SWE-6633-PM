@@ -25,11 +25,6 @@ namespace ProjectManagementTool {
 			refresh();
 		}
 
-		public void refresh() {
-			setBasicProjectProperties();
-			fillPersonDataGrid();
-		}
-
 		private void setBasicProjectProperties() {
 			this.UI_editableProjectDescription.Text = currentProject.projectDescription;
 			this.UI_editableProjectName.Text = currentProject.projectName;
@@ -57,9 +52,9 @@ namespace ProjectManagementTool {
 			currentProject.projectName = UI_editableProjectName.Text;
 			currentProject.projectDescription = UI_editableProjectDescription.Text;
 
-			var addPersonForm = new AddPerson(this);
-			addPersonForm.Show();
-
+			var addPersonForm = new AddPerson();
+			addPersonForm.ShowDialog();
+			refresh();
 		}
 
 		private void UI_save_Click(object sender, EventArgs e) {
@@ -70,6 +65,16 @@ namespace ProjectManagementTool {
 			data.updateProject(currentProject);
 			lastWindow.refresh(currentProject);
 			this.Close();
+		}
+
+		public void refresh(Project p) {
+			currentProject = p;
+			refresh();
+		}
+
+		public void refresh() {
+			setBasicProjectProperties();
+			fillPersonDataGrid();
 		}
 	}
 }
