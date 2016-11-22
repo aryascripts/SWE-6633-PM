@@ -7,6 +7,35 @@ using System.Threading.Tasks;
 
 namespace ProjectManagementTool {
 	class DataManagement {
+		
+		/*
+		High Level Overview:
+		This class is basically to store two objects: Person and Project
+		Person is self explanatory.
+		Project object contains:
+			- List of Requirements
+			- List of Team Members (Person)
+			- Basic project properties (names, owners, etc)
+			- etc.
+		
+		Once you call getProject(ID), it returns the project that you are looking for. 
+		This returns everything that is stored in the Project object (as mentioned above, 
+		and explained in the Project.cs file where the class resides.
+		
+		Assuming you called getProject to make some changes to the project like add requirements,
+		hours, teammembers, etc. you WILL need to call updateProject(Project) to save it to the database.
+		Essentially evetything you change, you will change in the local Project variable you stored the getProject(ID) in.
+		
+		For example, a flow might be:
+		
+		DataManagement data = new DataManagement();
+		Project p = getProject(Guid <-- You need to know this);
+		p.setDescription("My new description");
+		
+		//The following statement is what SAVES it to the database, so any other tab that might try to get information
+		//about the current Project, will have the latest information (your changes)
+		data.updateProject(p); 
+		*/
 
 		public Guid currentProject { get; private set; }
 		private const String database = "database.db";
@@ -17,8 +46,7 @@ namespace ProjectManagementTool {
 				personsCollection.Insert(p);
 			}
 		}
-        
-        
+
 		public List<Person> allPersons() {
 			List<Person> returnList = new List<Person>();
 			using (var db = new LiteDatabase(database)) {
@@ -31,31 +59,7 @@ namespace ProjectManagementTool {
 			}
 		}
 
-        public void addRequirement(Requirement r)
-        {
-            using (var db = new LiteDatabase(database))
-            {
-                var requirementsCollection = db.GetCollection<Requirement>("Requirements");
-                requirementsCollection.Insert(r);
-            }
-        }
-
-        public List<Requirement> allReqs()
-        {
-            List<Requirement> returnList = new List<Requirement>();
-            using (var db = new LiteDatabase(database))
-            {
-                var requirements = db.GetCollection<Requirement>("Requirements");
-                var results = requirements.FindAll();
-                foreach (Requirement r in results)
-                {
-                    returnList.Add(r);
-                }
-                return returnList;
-            }
-        }
-
-        public List<Project> allProjects() {
+		public List<Project> allProjects() {
 			List<Project> returnList = new List<Project>();
 			using (var db = new LiteDatabase(database)) {
 				var projects = db.GetCollection<Project>("projects");
