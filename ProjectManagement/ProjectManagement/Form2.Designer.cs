@@ -68,6 +68,7 @@
             this.ProjectMng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlHours = new System.Windows.Forms.TabControl();
+<<<<<<< HEAD
             this.tabTask = new System.Windows.Forms.TabPage();
             this.buttonAddHours = new System.Windows.Forms.Button();
             this.buttonDeleteTask = new System.Windows.Forms.Button();
@@ -78,6 +79,8 @@
             this.ColumnReq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.projectOverview.SuspendLayout();
             this.tabPageRisk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -88,8 +91,11 @@
             this.tabPageHours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControlHours.SuspendLayout();
+<<<<<<< HEAD
             this.tabTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+=======
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.SuspendLayout();
             // 
             // projectOverview
@@ -101,9 +107,17 @@
             this.projectOverview.Controls.Add(this.labelDescription);
             this.projectOverview.Controls.Add(this.labelprojectOwner);
             this.projectOverview.Controls.Add(this.labelprojectName);
+<<<<<<< HEAD
             this.projectOverview.Location = new System.Drawing.Point(31, 8);
             this.projectOverview.Name = "projectOverview";
             this.projectOverview.Size = new System.Drawing.Size(200, 339);
+=======
+            this.projectOverview.Location = new System.Drawing.Point(62, 16);
+            this.projectOverview.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.projectOverview.Name = "projectOverview";
+            this.projectOverview.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.projectOverview.Size = new System.Drawing.Size(400, 652);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.projectOverview.TabIndex = 0;
             this.projectOverview.TabStop = false;
             this.projectOverview.Text = "Project Overvew";
@@ -111,38 +125,66 @@
             // 
             // UI_projectDescription
             // 
+<<<<<<< HEAD
             this.UI_projectDescription.Location = new System.Drawing.Point(8, 162);
             this.UI_projectDescription.Margin = new System.Windows.Forms.Padding(2);
             this.UI_projectDescription.Name = "UI_projectDescription";
             this.UI_projectDescription.Size = new System.Drawing.Size(188, 139);
+=======
+            this.UI_projectDescription.Location = new System.Drawing.Point(16, 311);
+            this.UI_projectDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.UI_projectDescription.Name = "UI_projectDescription";
+            this.UI_projectDescription.Size = new System.Drawing.Size(372, 263);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_projectDescription.TabIndex = 4;
             this.UI_projectDescription.Text = "";
             // 
             // UI_projectOwner
             // 
             this.UI_projectOwner.AutoSize = true;
+<<<<<<< HEAD
             this.UI_projectOwner.Location = new System.Drawing.Point(10, 100);
             this.UI_projectOwner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UI_projectOwner.Name = "UI_projectOwner";
             this.UI_projectOwner.Size = new System.Drawing.Size(35, 13);
+=======
+            this.UI_projectOwner.Location = new System.Drawing.Point(21, 192);
+            this.UI_projectOwner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UI_projectOwner.Name = "UI_projectOwner";
+            this.UI_projectOwner.Size = new System.Drawing.Size(70, 25);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_projectOwner.TabIndex = 3;
             this.UI_projectOwner.Text = "label2";
             // 
             // UI_projectLabel
             // 
             this.UI_projectLabel.AutoSize = true;
+<<<<<<< HEAD
             this.UI_projectLabel.Location = new System.Drawing.Point(8, 42);
             this.UI_projectLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UI_projectLabel.Name = "UI_projectLabel";
             this.UI_projectLabel.Size = new System.Drawing.Size(35, 13);
+=======
+            this.UI_projectLabel.Location = new System.Drawing.Point(16, 81);
+            this.UI_projectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UI_projectLabel.Name = "UI_projectLabel";
+            this.UI_projectLabel.Size = new System.Drawing.Size(70, 25);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_projectLabel.TabIndex = 2;
             this.UI_projectLabel.Text = "label2";
             // 
             // UI_editButton
             // 
+<<<<<<< HEAD
             this.UI_editButton.Location = new System.Drawing.Point(55, 306);
             this.UI_editButton.Name = "UI_editButton";
             this.UI_editButton.Size = new System.Drawing.Size(75, 23);
+=======
+            this.UI_editButton.Location = new System.Drawing.Point(110, 588);
+            this.UI_editButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UI_editButton.Name = "UI_editButton";
+            this.UI_editButton.Size = new System.Drawing.Size(150, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_editButton.TabIndex = 1;
             this.UI_editButton.Text = "Edit";
             this.UI_editButton.UseVisualStyleBackColor = true;
@@ -151,27 +193,48 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
+<<<<<<< HEAD
             this.labelDescription.Location = new System.Drawing.Point(6, 145);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(96, 13);
+=======
+            this.labelDescription.Location = new System.Drawing.Point(12, 278);
+            this.labelDescription.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(193, 25);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.labelDescription.TabIndex = 1;
             this.labelDescription.Text = "Project Description";
             // 
             // labelprojectOwner
             // 
             this.labelprojectOwner.AutoSize = true;
+<<<<<<< HEAD
             this.labelprojectOwner.Location = new System.Drawing.Point(6, 83);
             this.labelprojectOwner.Name = "labelprojectOwner";
             this.labelprojectOwner.Size = new System.Drawing.Size(74, 13);
+=======
+            this.labelprojectOwner.Location = new System.Drawing.Point(12, 159);
+            this.labelprojectOwner.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelprojectOwner.Name = "labelprojectOwner";
+            this.labelprojectOwner.Size = new System.Drawing.Size(147, 25);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.labelprojectOwner.TabIndex = 1;
             this.labelprojectOwner.Text = "Project Owner";
             // 
             // labelprojectName
             // 
             this.labelprojectName.AutoSize = true;
+<<<<<<< HEAD
             this.labelprojectName.Location = new System.Drawing.Point(6, 25);
             this.labelprojectName.Name = "labelprojectName";
             this.labelprojectName.Size = new System.Drawing.Size(71, 13);
+=======
+            this.labelprojectName.Location = new System.Drawing.Point(12, 48);
+            this.labelprojectName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelprojectName.Name = "labelprojectName";
+            this.labelprojectName.Size = new System.Drawing.Size(141, 25);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.labelprojectName.TabIndex = 1;
             this.labelprojectName.Text = "Project Name";
             // 
@@ -180,27 +243,48 @@
             this.tabPageRisk.Controls.Add(this.button4);
             this.tabPageRisk.Controls.Add(this.button2);
             this.tabPageRisk.Controls.Add(this.dataGridView4);
+<<<<<<< HEAD
             this.tabPageRisk.Location = new System.Drawing.Point(4, 22);
             this.tabPageRisk.Name = "tabPageRisk";
             this.tabPageRisk.Size = new System.Drawing.Size(651, 415);
+=======
+            this.tabPageRisk.Location = new System.Drawing.Point(8, 39);
+            this.tabPageRisk.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageRisk.Name = "tabPageRisk";
+            this.tabPageRisk.Size = new System.Drawing.Size(1302, 801);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.tabPageRisk.TabIndex = 4;
             this.tabPageRisk.Text = "Risk";
             this.tabPageRisk.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+<<<<<<< HEAD
             this.button4.Location = new System.Drawing.Point(493, 391);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
+=======
+            this.button4.Location = new System.Drawing.Point(986, 752);
+            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.button4.TabIndex = 2;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(574, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
+=======
+            this.button2.Location = new System.Drawing.Point(1148, 752);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.button2.TabIndex = 1;
             this.button2.Text = "Create Risk";
             this.button2.UseVisualStyleBackColor = true;
@@ -214,8 +298,14 @@
             this.EditViewRisk,
             this.DeleteRisk});
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(649, 385);
+=======
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(1298, 741);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -245,39 +335,71 @@
             this.tabPageRequirements.Controls.Add(this.deleteBtn);
             this.tabPageRequirements.Controls.Add(this.buttonNewRequirement);
             this.tabPageRequirements.Controls.Add(this.dataGridRequirements);
+<<<<<<< HEAD
             this.tabPageRequirements.Location = new System.Drawing.Point(4, 22);
             this.tabPageRequirements.Name = "tabPageRequirements";
             this.tabPageRequirements.Size = new System.Drawing.Size(651, 415);
+=======
+            this.tabPageRequirements.Location = new System.Drawing.Point(8, 39);
+            this.tabPageRequirements.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageRequirements.Name = "tabPageRequirements";
+            this.tabPageRequirements.Size = new System.Drawing.Size(1302, 801);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.tabPageRequirements.TabIndex = 2;
             this.tabPageRequirements.Text = "Requirements";
             this.tabPageRequirements.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(504, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 23);
+=======
+            this.button1.Location = new System.Drawing.Point(1008, 753);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.button1.TabIndex = 3;
             this.button1.Text = "View Tasks";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // deleteBtn
             // 
+<<<<<<< HEAD
             this.deleteBtn.Location = new System.Drawing.Point(437, 392);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(61, 23);
+=======
+            this.deleteBtn.Location = new System.Drawing.Point(874, 753);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(122, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.deleteBtn.TabIndex = 2;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
             // 
             // buttonNewRequirement
             // 
+<<<<<<< HEAD
             this.buttonNewRequirement.Location = new System.Drawing.Point(592, 392);
             this.buttonNewRequirement.Name = "buttonNewRequirement";
             this.buttonNewRequirement.Size = new System.Drawing.Size(58, 23);
             this.buttonNewRequirement.TabIndex = 1;
             this.buttonNewRequirement.Text = "New";
             this.buttonNewRequirement.UseVisualStyleBackColor = true;
+=======
+            this.buttonNewRequirement.Location = new System.Drawing.Point(1185, 753);
+            this.buttonNewRequirement.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonNewRequirement.Name = "buttonNewRequirement";
+            this.buttonNewRequirement.Size = new System.Drawing.Size(116, 44);
+            this.buttonNewRequirement.TabIndex = 1;
+            this.buttonNewRequirement.Text = "New";
+            this.buttonNewRequirement.UseVisualStyleBackColor = true;
+            this.buttonNewRequirement.Click += new System.EventHandler(this.buttonNewRequirement_Click);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             // 
             // dataGridRequirements
             // 
@@ -288,9 +410,16 @@
             this.RequirementType,
             this.RequirementEdit,
             this.RequirementDelete});
+<<<<<<< HEAD
             this.dataGridRequirements.Location = new System.Drawing.Point(3, 3);
             this.dataGridRequirements.Name = "dataGridRequirements";
             this.dataGridRequirements.Size = new System.Drawing.Size(647, 384);
+=======
+            this.dataGridRequirements.Location = new System.Drawing.Point(6, 6);
+            this.dataGridRequirements.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridRequirements.Name = "dataGridRequirements";
+            this.dataGridRequirements.Size = new System.Drawing.Size(1294, 739);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.dataGridRequirements.TabIndex = 0;
             // 
             // RequirementName
@@ -329,10 +458,18 @@
             this.tabPageMembers.Controls.Add(this.UI_deleteTeamMemberButton);
             this.tabPageMembers.Controls.Add(this.UI_AddMemberBtn);
             this.tabPageMembers.Controls.Add(this.UI_teamDataGrid);
+<<<<<<< HEAD
             this.tabPageMembers.Location = new System.Drawing.Point(4, 22);
             this.tabPageMembers.Name = "tabPageMembers";
             this.tabPageMembers.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageMembers.Size = new System.Drawing.Size(651, 415);
+=======
+            this.tabPageMembers.Location = new System.Drawing.Point(8, 39);
+            this.tabPageMembers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageMembers.Name = "tabPageMembers";
+            this.tabPageMembers.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageMembers.Size = new System.Drawing.Size(1302, 801);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.tabPageMembers.TabIndex = 1;
             this.tabPageMembers.Text = "Team Members";
             this.tabPageMembers.UseVisualStyleBackColor = true;
@@ -340,9 +477,16 @@
             // 
             // UI_deleteTeamMemberButton
             // 
+<<<<<<< HEAD
             this.UI_deleteTeamMemberButton.Location = new System.Drawing.Point(455, 391);
             this.UI_deleteTeamMemberButton.Name = "UI_deleteTeamMemberButton";
             this.UI_deleteTeamMemberButton.Size = new System.Drawing.Size(94, 23);
+=======
+            this.UI_deleteTeamMemberButton.Location = new System.Drawing.Point(910, 752);
+            this.UI_deleteTeamMemberButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UI_deleteTeamMemberButton.Name = "UI_deleteTeamMemberButton";
+            this.UI_deleteTeamMemberButton.Size = new System.Drawing.Size(188, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_deleteTeamMemberButton.TabIndex = 2;
             this.UI_deleteTeamMemberButton.Text = "Delete Selected";
             this.UI_deleteTeamMemberButton.UseVisualStyleBackColor = true;
@@ -350,9 +494,16 @@
             // 
             // UI_AddMemberBtn
             // 
+<<<<<<< HEAD
             this.UI_AddMemberBtn.Location = new System.Drawing.Point(555, 391);
             this.UI_AddMemberBtn.Name = "UI_AddMemberBtn";
             this.UI_AddMemberBtn.Size = new System.Drawing.Size(94, 23);
+=======
+            this.UI_AddMemberBtn.Location = new System.Drawing.Point(1110, 752);
+            this.UI_AddMemberBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UI_AddMemberBtn.Name = "UI_AddMemberBtn";
+            this.UI_AddMemberBtn.Size = new System.Drawing.Size(188, 44);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_AddMemberBtn.TabIndex = 1;
             this.UI_AddMemberBtn.Text = "Create New";
             this.UI_AddMemberBtn.UseVisualStyleBackColor = true;
@@ -361,19 +512,34 @@
             // UI_teamDataGrid
             // 
             this.UI_teamDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.UI_teamDataGrid.Location = new System.Drawing.Point(3, 3);
             this.UI_teamDataGrid.Name = "UI_teamDataGrid";
             this.UI_teamDataGrid.Size = new System.Drawing.Size(646, 383);
+=======
+            this.UI_teamDataGrid.Location = new System.Drawing.Point(6, 6);
+            this.UI_teamDataGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UI_teamDataGrid.Name = "UI_teamDataGrid";
+            this.UI_teamDataGrid.Size = new System.Drawing.Size(1292, 736);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.UI_teamDataGrid.TabIndex = 0;
             // 
             // tabPageHours
             // 
             this.tabPageHours.Controls.Add(this.addProjectHours);
             this.tabPageHours.Controls.Add(this.dataGridView2);
+<<<<<<< HEAD
             this.tabPageHours.Location = new System.Drawing.Point(4, 22);
             this.tabPageHours.Name = "tabPageHours";
             this.tabPageHours.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageHours.Size = new System.Drawing.Size(651, 415);
+=======
+            this.tabPageHours.Location = new System.Drawing.Point(8, 39);
+            this.tabPageHours.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageHours.Name = "tabPageHours";
+            this.tabPageHours.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageHours.Size = new System.Drawing.Size(1302, 801);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.tabPageHours.TabIndex = 0;
             this.tabPageHours.Text = "Project Hours";
             this.tabPageHours.UseVisualStyleBackColor = true;
@@ -381,10 +547,16 @@
             // 
             // addProjectHours
             // 
+<<<<<<< HEAD
             this.addProjectHours.Location = new System.Drawing.Point(565, 388);
             this.addProjectHours.Margin = new System.Windows.Forms.Padding(2);
             this.addProjectHours.Name = "addProjectHours";
             this.addProjectHours.Size = new System.Drawing.Size(80, 24);
+=======
+            this.addProjectHours.Location = new System.Drawing.Point(1130, 745);
+            this.addProjectHours.Name = "addProjectHours";
+            this.addProjectHours.Size = new System.Drawing.Size(160, 47);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.addProjectHours.TabIndex = 1;
             this.addProjectHours.Text = "Add Hours";
             this.addProjectHours.UseVisualStyleBackColor = true;
@@ -399,9 +571,16 @@
             this.Testing,
             this.ProjectMng,
             this.Total});
+<<<<<<< HEAD
             this.dataGridView2.Location = new System.Drawing.Point(3, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(642, 376);
+=======
+            this.dataGridView2.Location = new System.Drawing.Point(6, 12);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1284, 723);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.dataGridView2.TabIndex = 0;
             // 
             // ReqAnalysis
@@ -440,6 +619,7 @@
             this.tabControlHours.Controls.Add(this.tabPageMembers);
             this.tabControlHours.Controls.Add(this.tabPageRequirements);
             this.tabControlHours.Controls.Add(this.tabPageRisk);
+<<<<<<< HEAD
             this.tabControlHours.Controls.Add(this.tabTask);
             this.tabControlHours.Location = new System.Drawing.Point(237, 12);
             this.tabControlHours.Name = "tabControlHours";
@@ -535,6 +715,23 @@
             this.ClientSize = new System.Drawing.Size(904, 459);
             this.Controls.Add(this.tabControlHours);
             this.Controls.Add(this.projectOverview);
+=======
+            this.tabControlHours.Location = new System.Drawing.Point(474, 25);
+            this.tabControlHours.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControlHours.Name = "tabControlHours";
+            this.tabControlHours.SelectedIndex = 0;
+            this.tabControlHours.Size = new System.Drawing.Size(1318, 848);
+            this.tabControlHours.TabIndex = 1;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1808, 883);
+            this.Controls.Add(this.tabControlHours);
+            this.Controls.Add(this.projectOverview);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.Name = "Form2";
             this.Text = "Project Manager 2016";
             this.projectOverview.ResumeLayout(false);
@@ -548,8 +745,11 @@
             this.tabPageHours.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabControlHours.ResumeLayout(false);
+<<<<<<< HEAD
             this.tabTask.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+=======
+>>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
             this.ResumeLayout(false);
 
         }
