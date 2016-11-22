@@ -148,12 +148,11 @@ namespace ProjectManagementTool {
 			refreshTeamMembers();
 		}
 
-<<<<<<< HEAD
-        private void buttonCreateTask_Click(object sender, EventArgs e)
-        {
+		private void buttonCreateTask_Click(object sender, EventArgs e) {
+
+		}
            
             
-=======
         // Implementation code for Requirements Tab
 
         private void buttonNewRequirement_Click(object sender, EventArgs e)
@@ -167,7 +166,6 @@ namespace ProjectManagementTool {
         {
             List<Requirement> reqList = new List<Requirement>();
 
->>>>>>> 2cff8ef428237317f19460d9a56f3069109ccaab
         }
     }
 }
