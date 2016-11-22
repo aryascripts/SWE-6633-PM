@@ -69,6 +69,10 @@ namespace ProjectManagementTool {
 			refreshTeamMembers();
 		}
 
+		public void getLatestProjectFromDatabase() {
+			currentProject = data.getProject(currentProject.ProjectID);
+		}
+
 		//This shold really be called "refreshProjectProperties" because that's what it does. It just
 		//updates the project properties after a potential update. 
 		private void initializeProjectProperties() {
@@ -157,12 +161,17 @@ namespace ProjectManagementTool {
 
         private void buttonNewRequirement_Click(object sender, EventArgs e)
         {
-            var addReqs = new CreateRequirement();
+			//var addReqs = new CreateRequirement(currentProject);
+			var addReqs = new CreateRequirement();
             addReqs.ShowDialog();
             addReqsToList();
         }
 
-        private void addReqsToList()
+		//Update the current project: getLatestProjectFromDatabase();
+		//Then use currentProject.requirements which holds all the requirements to get
+		//each Requirement.
+
+		private void addReqsToList()
         {
             List<Requirement> reqList = new List<Requirement>();
 
