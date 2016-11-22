@@ -8,20 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * This file basically loads a list of Projects that are in our database currently
+ * You are also able to create new projects from this screen.
+ * 
+ * After you select a project (or create new one) this form is trashed. Only opens
+ * on first start up.
+ */
+
 namespace ProjectManagementTool {
 	public partial class Form1 : Form {
 		DataManagement data;
-		List<Person> allPersons = new List<Person>();
-        List<Requirement> allReqs = new List<Requirement>();
-        List<Risk> allRisks = new List<Risk>();
-
 		List<Project> allProjects = new List<Project>();
 
+		//Gets the all the projects from the database and sets fills the datagridview. 
 		public Form1() {
 			InitializeComponent();
 			data = new ProjectManagementTool.DataManagement();
 
-			allPersons = data.allPersons();
 			allProjects = data.allProjects();
 
 			setUpDataGrid(allProjects);
@@ -36,6 +40,8 @@ namespace ProjectManagementTool {
 
 		}
 
+		//Creates a new "Form2" with a blank constructor indicating that it is a NEW project
+		//The constructor of "Form2" creates a dummy project for the user to edit. 
 		private void buttonNew_Click(object sender, EventArgs e) {
 			this.Hide();
 			var form2 = new Form2();
@@ -44,14 +50,21 @@ namespace ProjectManagementTool {
 
 		}
 
+		//Gets the index of the cell that is currently selected in the datagridview,
+		//hides the current window,
+		//passes the Project that is in the index in "allProjects" List, to Form
+		//After form2 is open, Form1 is closed. 
 		private void buttonOpen_Click(object sender, EventArgs e) {
 			this.Hide();
 			var form2 = new Form2(allProjects[this.projectsDataGrid.CurrentCell.RowIndex]);
-			form2.Closed += (s, args) => this.Close();
 			form2.Show();
+			this.Close();
 
 		}
 
+		//use the allProjects List<Project> to fill the datagrid.
+		//you first add the columns to the "Datagrid"
+		//then create a string[] which will become rows in the datagrid. 
 		private void setUpDataGrid(List<Project> projects) {
 			var dataGrid = this.projectsDataGrid;
 
