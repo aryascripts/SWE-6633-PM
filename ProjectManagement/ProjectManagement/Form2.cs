@@ -104,22 +104,6 @@ namespace ProjectManagementTool {
 			}
 		}
 
-		private void groupBox1_Enter(object sender, EventArgs e) {
-
-		}
-
-		private void tabPage2_Click(object sender, EventArgs e) {
-
-		}
-
-		private void tabPage1_Click(object sender, EventArgs e) {
-
-		}
-
-		private void label1_Click(object sender, EventArgs e) {
-
-		}
-
 		private void buttonCreateUser_Click(object sender, EventArgs e) {
 			var addTeamMember = new AddTeamMember(currentProject);
 			addTeamMember.ShowDialog();
@@ -176,5 +160,25 @@ namespace ProjectManagementTool {
             List<Requirement> reqList = new List<Requirement>();
 
         }
-    }
+
+
+
+
+		//MISC STUFF IDK
+		private void groupBox1_Enter(object sender, EventArgs e) {
+
+		}
+
+		private void tabPage2_Click(object sender, EventArgs e) {
+
+		}
+
+		private void tabPage1_Click(object sender, EventArgs e) {
+
+		}
+
+		private void label1_Click(object sender, EventArgs e) {
+
+		}
+	}
 }
