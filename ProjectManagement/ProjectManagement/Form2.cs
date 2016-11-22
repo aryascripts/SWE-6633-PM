@@ -117,5 +117,20 @@ namespace ProjectManagementTool {
 			data.updateProject(currentProject);
 			refreshTeamMembers();
 		}
-	}
+
+        // Implementation code for Requirements Tab
+
+        private void buttonNewRequirement_Click(object sender, EventArgs e)
+        {
+            var addReqs = new CreateRequirement();
+            addReqs.ShowDialog();
+            addReqsToList();
+        }
+
+        private void addReqsToList()
+        {
+            List<Requirement> reqList = new List<Requirement>();
+
+        }
+    }
 }

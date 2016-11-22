@@ -17,7 +17,8 @@ namespace ProjectManagementTool {
 				personsCollection.Insert(p);
 			}
 		}
-
+        
+        
 		public List<Person> allPersons() {
 			List<Person> returnList = new List<Person>();
 			using (var db = new LiteDatabase(database)) {
@@ -30,7 +31,31 @@ namespace ProjectManagementTool {
 			}
 		}
 
-		public List<Project> allProjects() {
+        public void addRequirement(Requirement r)
+        {
+            using (var db = new LiteDatabase(database))
+            {
+                var requirementsCollection = db.GetCollection<Requirement>("Requirements");
+                requirementsCollection.Insert(r);
+            }
+        }
+
+        public List<Requirement> allReqs()
+        {
+            List<Requirement> returnList = new List<Requirement>();
+            using (var db = new LiteDatabase(database))
+            {
+                var requirements = db.GetCollection<Requirement>("Requirements");
+                var results = requirements.FindAll();
+                foreach (Requirement r in results)
+                {
+                    returnList.Add(r);
+                }
+                return returnList;
+            }
+        }
+
+        public List<Project> allProjects() {
 			List<Project> returnList = new List<Project>();
 			using (var db = new LiteDatabase(database)) {
 				var projects = db.GetCollection<Project>("projects");
