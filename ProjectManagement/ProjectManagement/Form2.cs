@@ -19,6 +19,7 @@ namespace ProjectManagementTool {
 		private Project currentProject; 
 		private DataGridView teamGridView;
 		private DataManagement data;
+        private Requirement currentRequirement;
 
 		/* CONSTRUCTOR.
 			This is when a NEW project is created. Dummy text is applied to project properties
@@ -138,6 +139,8 @@ namespace ProjectManagementTool {
 
 		private void buttonCreateTask_Click(object sender, EventArgs e) {
 
+            var addTask = new CreateTask();
+            addTask.ShowDialog();
 		}
            
             
@@ -180,5 +183,11 @@ namespace ProjectManagementTool {
 		private void label1_Click(object sender, EventArgs e) {
 
 		}
-	}
+
+        private void buttonDeleteTask_Click(object sender, EventArgs e)
+        {
+            currentRequirement.removeTask(currentRequirement.tasks[this.taskGridView.SelectedCells[0].RowIndex]);
+            data.updateProject();
+        }
+    }
 }

@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonAddUserTask = new System.Windows.Forms.Button();
             this.buttonAddReqTask = new System.Windows.Forms.Button();
+            this.buttonSaveTask = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -98,10 +99,11 @@
             // 
             this.buttonAddUserTask.Location = new System.Drawing.Point(41, 202);
             this.buttonAddUserTask.Name = "buttonAddUserTask";
-            this.buttonAddUserTask.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddUserTask.Size = new System.Drawing.Size(86, 23);
             this.buttonAddUserTask.TabIndex = 6;
             this.buttonAddUserTask.Text = "Add User";
             this.buttonAddUserTask.UseVisualStyleBackColor = true;
+            this.buttonAddUserTask.Click += new System.EventHandler(this.buttonAddUserTask_Click);
             // 
             // buttonAddReqTask
             // 
@@ -112,11 +114,22 @@
             this.buttonAddReqTask.Text = "Add Requirement";
             this.buttonAddReqTask.UseVisualStyleBackColor = true;
             // 
+            // buttonSaveTask
+            // 
+            this.buttonSaveTask.Location = new System.Drawing.Point(94, 237);
+            this.buttonSaveTask.Name = "buttonSaveTask";
+            this.buttonSaveTask.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveTask.TabIndex = 8;
+            this.buttonSaveTask.Text = "Save";
+            this.buttonSaveTask.UseVisualStyleBackColor = true;
+            this.buttonSaveTask.Click += new System.EventHandler(this.buttonSaveTask_Click);
+            // 
             // CreateTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 237);
+            this.ClientSize = new System.Drawing.Size(256, 272);
+            this.Controls.Add(this.buttonSaveTask);
             this.Controls.Add(this.buttonAddReqTask);
             this.Controls.Add(this.buttonAddUserTask);
             this.Controls.Add(this.label3);
@@ -142,5 +155,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonAddUserTask;
         private System.Windows.Forms.Button buttonAddReqTask;
+        private System.Windows.Forms.Button buttonSaveTask;
     }
 }

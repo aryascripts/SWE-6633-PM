@@ -72,7 +72,7 @@
             this.buttonAddHours = new System.Windows.Forms.Button();
             this.buttonDeleteTask = new System.Windows.Forms.Button();
             this.buttonCreateTask = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.taskGridView = new System.Windows.Forms.DataGridView();
             this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnReq = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControlHours.SuspendLayout();
             this.tabTask.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // projectOverview
@@ -104,11 +104,6 @@
             this.projectOverview.Location = new System.Drawing.Point(31, 8);
             this.projectOverview.Name = "projectOverview";
             this.projectOverview.Size = new System.Drawing.Size(200, 339);
-            this.projectOverview.Location = new System.Drawing.Point(62, 16);
-            this.projectOverview.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.projectOverview.Name = "projectOverview";
-            this.projectOverview.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.projectOverview.Size = new System.Drawing.Size(400, 652);
             this.projectOverview.TabIndex = 0;
             this.projectOverview.TabStop = false;
             this.projectOverview.Text = "Project Overvew";
@@ -117,13 +112,9 @@
             // UI_projectDescription
             // 
             this.UI_projectDescription.Location = new System.Drawing.Point(8, 162);
-            this.UI_projectDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.UI_projectDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UI_projectDescription.Name = "UI_projectDescription";
             this.UI_projectDescription.Size = new System.Drawing.Size(188, 139);
-            this.UI_projectDescription.Location = new System.Drawing.Point(16, 311);
-            this.UI_projectDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.UI_projectDescription.Name = "UI_projectDescription";
-            this.UI_projectDescription.Size = new System.Drawing.Size(372, 263);
             this.UI_projectDescription.TabIndex = 4;
             this.UI_projectDescription.Text = "";
             // 
@@ -134,10 +125,6 @@
             this.UI_projectOwner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UI_projectOwner.Name = "UI_projectOwner";
             this.UI_projectOwner.Size = new System.Drawing.Size(35, 13);
-            this.UI_projectOwner.Location = new System.Drawing.Point(21, 192);
-            this.UI_projectOwner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UI_projectOwner.Name = "UI_projectOwner";
-            this.UI_projectOwner.Size = new System.Drawing.Size(70, 25);
             this.UI_projectOwner.TabIndex = 3;
             this.UI_projectOwner.Text = "label2";
             // 
@@ -148,10 +135,6 @@
             this.UI_projectLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UI_projectLabel.Name = "UI_projectLabel";
             this.UI_projectLabel.Size = new System.Drawing.Size(35, 13);
-            this.UI_projectLabel.Location = new System.Drawing.Point(16, 81);
-            this.UI_projectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UI_projectLabel.Name = "UI_projectLabel";
-            this.UI_projectLabel.Size = new System.Drawing.Size(70, 25);
             this.UI_projectLabel.TabIndex = 2;
             this.UI_projectLabel.Text = "label2";
             // 
@@ -160,10 +143,6 @@
             this.UI_editButton.Location = new System.Drawing.Point(55, 306);
             this.UI_editButton.Name = "UI_editButton";
             this.UI_editButton.Size = new System.Drawing.Size(75, 23);
-            this.UI_editButton.Location = new System.Drawing.Point(110, 588);
-            this.UI_editButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.UI_editButton.Name = "UI_editButton";
-            this.UI_editButton.Size = new System.Drawing.Size(150, 44);
             this.UI_editButton.TabIndex = 1;
             this.UI_editButton.Text = "Edit";
             this.UI_editButton.UseVisualStyleBackColor = true;
@@ -175,10 +154,6 @@
             this.labelDescription.Location = new System.Drawing.Point(6, 145);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(96, 13);
-            this.labelDescription.Location = new System.Drawing.Point(12, 278);
-            this.labelDescription.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(193, 25);
             this.labelDescription.TabIndex = 1;
             this.labelDescription.Text = "Project Description";
             // 
@@ -188,10 +163,6 @@
             this.labelprojectOwner.Location = new System.Drawing.Point(6, 83);
             this.labelprojectOwner.Name = "labelprojectOwner";
             this.labelprojectOwner.Size = new System.Drawing.Size(74, 13);
-            this.labelprojectOwner.Location = new System.Drawing.Point(12, 159);
-            this.labelprojectOwner.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelprojectOwner.Name = "labelprojectOwner";
-            this.labelprojectOwner.Size = new System.Drawing.Size(147, 25);
             this.labelprojectOwner.TabIndex = 1;
             this.labelprojectOwner.Text = "Project Owner";
             // 
@@ -201,10 +172,6 @@
             this.labelprojectName.Location = new System.Drawing.Point(6, 25);
             this.labelprojectName.Name = "labelprojectName";
             this.labelprojectName.Size = new System.Drawing.Size(71, 13);
-            this.labelprojectName.Location = new System.Drawing.Point(12, 48);
-            this.labelprojectName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelprojectName.Name = "labelprojectName";
-            this.labelprojectName.Size = new System.Drawing.Size(141, 25);
             this.labelprojectName.TabIndex = 1;
             this.labelprojectName.Text = "Project Name";
             // 
@@ -215,10 +182,7 @@
             this.tabPageRisk.Controls.Add(this.dataGridView4);
             this.tabPageRisk.Location = new System.Drawing.Point(4, 22);
             this.tabPageRisk.Name = "tabPageRisk";
-            this.tabPageRisk.Location = new System.Drawing.Point(8, 39);
-            this.tabPageRisk.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageRisk.Name = "tabPageRisk";
-            this.tabPageRisk.Size = new System.Drawing.Size(1302, 801);
+            this.tabPageRisk.Size = new System.Drawing.Size(651, 415);
             this.tabPageRisk.TabIndex = 4;
             this.tabPageRisk.Text = "Risk";
             this.tabPageRisk.UseVisualStyleBackColor = true;
@@ -228,10 +192,6 @@
             this.button4.Location = new System.Drawing.Point(493, 391);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.Location = new System.Drawing.Point(986, 752);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 44);
             this.button4.TabIndex = 2;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
@@ -241,10 +201,6 @@
             this.button2.Location = new System.Drawing.Point(574, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.Location = new System.Drawing.Point(1148, 752);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 44);
             this.button2.TabIndex = 1;
             this.button2.Text = "Create Risk";
             this.button2.UseVisualStyleBackColor = true;
@@ -260,9 +216,6 @@
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(649, 385);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1298, 741);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -295,10 +248,6 @@
             this.tabPageRequirements.Location = new System.Drawing.Point(4, 22);
             this.tabPageRequirements.Name = "tabPageRequirements";
             this.tabPageRequirements.Size = new System.Drawing.Size(651, 415);
-            this.tabPageRequirements.Location = new System.Drawing.Point(8, 39);
-            this.tabPageRequirements.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageRequirements.Name = "tabPageRequirements";
-            this.tabPageRequirements.Size = new System.Drawing.Size(1302, 801);
             this.tabPageRequirements.TabIndex = 2;
             this.tabPageRequirements.Text = "Requirements";
             this.tabPageRequirements.UseVisualStyleBackColor = true;
@@ -308,10 +257,6 @@
             this.button1.Location = new System.Drawing.Point(504, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 23);
-            this.button1.Location = new System.Drawing.Point(1008, 753);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 44);
             this.button1.TabIndex = 3;
             this.button1.Text = "View Tasks";
             this.button1.UseVisualStyleBackColor = true;
@@ -321,10 +266,6 @@
             this.deleteBtn.Location = new System.Drawing.Point(437, 392);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(61, 23);
-            this.deleteBtn.Location = new System.Drawing.Point(874, 753);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(122, 44);
             this.deleteBtn.TabIndex = 2;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -334,13 +275,6 @@
             this.buttonNewRequirement.Location = new System.Drawing.Point(592, 392);
             this.buttonNewRequirement.Name = "buttonNewRequirement";
             this.buttonNewRequirement.Size = new System.Drawing.Size(58, 23);
-            this.buttonNewRequirement.TabIndex = 1;
-            this.buttonNewRequirement.Text = "New";
-            this.buttonNewRequirement.UseVisualStyleBackColor = true;
-            this.buttonNewRequirement.Location = new System.Drawing.Point(1185, 753);
-            this.buttonNewRequirement.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.buttonNewRequirement.Name = "buttonNewRequirement";
-            this.buttonNewRequirement.Size = new System.Drawing.Size(116, 44);
             this.buttonNewRequirement.TabIndex = 1;
             this.buttonNewRequirement.Text = "New";
             this.buttonNewRequirement.UseVisualStyleBackColor = true;
@@ -358,10 +292,6 @@
             this.dataGridRequirements.Location = new System.Drawing.Point(3, 3);
             this.dataGridRequirements.Name = "dataGridRequirements";
             this.dataGridRequirements.Size = new System.Drawing.Size(647, 384);
-            this.dataGridRequirements.Location = new System.Drawing.Point(6, 6);
-            this.dataGridRequirements.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridRequirements.Name = "dataGridRequirements";
-            this.dataGridRequirements.Size = new System.Drawing.Size(1294, 739);
             this.dataGridRequirements.TabIndex = 0;
             // 
             // RequirementName
@@ -404,11 +334,6 @@
             this.tabPageMembers.Name = "tabPageMembers";
             this.tabPageMembers.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageMembers.Size = new System.Drawing.Size(651, 415);
-            this.tabPageMembers.Location = new System.Drawing.Point(8, 39);
-            this.tabPageMembers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageMembers.Name = "tabPageMembers";
-            this.tabPageMembers.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageMembers.Size = new System.Drawing.Size(1302, 801);
             this.tabPageMembers.TabIndex = 1;
             this.tabPageMembers.Text = "Team Members";
             this.tabPageMembers.UseVisualStyleBackColor = true;
@@ -419,10 +344,6 @@
             this.UI_deleteTeamMemberButton.Location = new System.Drawing.Point(455, 391);
             this.UI_deleteTeamMemberButton.Name = "UI_deleteTeamMemberButton";
             this.UI_deleteTeamMemberButton.Size = new System.Drawing.Size(94, 23);
-            this.UI_deleteTeamMemberButton.Location = new System.Drawing.Point(910, 752);
-            this.UI_deleteTeamMemberButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.UI_deleteTeamMemberButton.Name = "UI_deleteTeamMemberButton";
-            this.UI_deleteTeamMemberButton.Size = new System.Drawing.Size(188, 44);
             this.UI_deleteTeamMemberButton.TabIndex = 2;
             this.UI_deleteTeamMemberButton.Text = "Delete Selected";
             this.UI_deleteTeamMemberButton.UseVisualStyleBackColor = true;
@@ -433,10 +354,6 @@
             this.UI_AddMemberBtn.Location = new System.Drawing.Point(555, 391);
             this.UI_AddMemberBtn.Name = "UI_AddMemberBtn";
             this.UI_AddMemberBtn.Size = new System.Drawing.Size(94, 23);
-            this.UI_AddMemberBtn.Location = new System.Drawing.Point(1110, 752);
-            this.UI_AddMemberBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.UI_AddMemberBtn.Name = "UI_AddMemberBtn";
-            this.UI_AddMemberBtn.Size = new System.Drawing.Size(188, 44);
             this.UI_AddMemberBtn.TabIndex = 1;
             this.UI_AddMemberBtn.Text = "Create New";
             this.UI_AddMemberBtn.UseVisualStyleBackColor = true;
@@ -448,10 +365,6 @@
             this.UI_teamDataGrid.Location = new System.Drawing.Point(3, 3);
             this.UI_teamDataGrid.Name = "UI_teamDataGrid";
             this.UI_teamDataGrid.Size = new System.Drawing.Size(646, 383);
-            this.UI_teamDataGrid.Location = new System.Drawing.Point(6, 6);
-            this.UI_teamDataGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.UI_teamDataGrid.Name = "UI_teamDataGrid";
-            this.UI_teamDataGrid.Size = new System.Drawing.Size(1292, 736);
             this.UI_teamDataGrid.TabIndex = 0;
             // 
             // tabPageHours
@@ -462,11 +375,6 @@
             this.tabPageHours.Name = "tabPageHours";
             this.tabPageHours.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageHours.Size = new System.Drawing.Size(651, 415);
-            this.tabPageHours.Location = new System.Drawing.Point(8, 39);
-            this.tabPageHours.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageHours.Name = "tabPageHours";
-            this.tabPageHours.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPageHours.Size = new System.Drawing.Size(1302, 801);
             this.tabPageHours.TabIndex = 0;
             this.tabPageHours.Text = "Project Hours";
             this.tabPageHours.UseVisualStyleBackColor = true;
@@ -474,13 +382,10 @@
             // 
             // addProjectHours
             // 
-            this.addProjectHours.Location = new System.Drawing.Point(565, 388);
-            this.addProjectHours.Margin = new System.Windows.Forms.Padding(2);
+            this.addProjectHours.Location = new System.Drawing.Point(565, 387);
+            this.addProjectHours.Margin = new System.Windows.Forms.Padding(1);
             this.addProjectHours.Name = "addProjectHours";
             this.addProjectHours.Size = new System.Drawing.Size(80, 24);
-            this.addProjectHours.Location = new System.Drawing.Point(1130, 745);
-            this.addProjectHours.Name = "addProjectHours";
-            this.addProjectHours.Size = new System.Drawing.Size(160, 47);
             this.addProjectHours.TabIndex = 1;
             this.addProjectHours.Text = "Add Hours";
             this.addProjectHours.UseVisualStyleBackColor = true;
@@ -498,10 +403,6 @@
             this.dataGridView2.Location = new System.Drawing.Point(3, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(642, 376);
-            this.dataGridView2.Location = new System.Drawing.Point(6, 12);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1284, 723);
             this.dataGridView2.TabIndex = 0;
             // 
             // ReqAnalysis
@@ -541,7 +442,7 @@
             this.tabControlHours.Controls.Add(this.tabPageRequirements);
             this.tabControlHours.Controls.Add(this.tabPageRisk);
             this.tabControlHours.Controls.Add(this.tabTask);
-            this.tabControlHours.Location = new System.Drawing.Point(237, 12);
+            this.tabControlHours.Location = new System.Drawing.Point(237, 13);
             this.tabControlHours.Name = "tabControlHours";
             this.tabControlHours.SelectedIndex = 0;
             this.tabControlHours.Size = new System.Drawing.Size(659, 441);
@@ -552,10 +453,11 @@
             this.tabTask.Controls.Add(this.buttonAddHours);
             this.tabTask.Controls.Add(this.buttonDeleteTask);
             this.tabTask.Controls.Add(this.buttonCreateTask);
-            this.tabTask.Controls.Add(this.dataGridView1);
+            this.tabTask.Controls.Add(this.taskGridView);
             this.tabTask.Location = new System.Drawing.Point(4, 22);
+            this.tabTask.Margin = new System.Windows.Forms.Padding(2);
             this.tabTask.Name = "tabTask";
-            this.tabTask.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTask.Padding = new System.Windows.Forms.Padding(2);
             this.tabTask.Size = new System.Drawing.Size(651, 415);
             this.tabTask.TabIndex = 5;
             this.tabTask.Text = "Task";
@@ -563,45 +465,50 @@
             // 
             // buttonAddHours
             // 
-            this.buttonAddHours.Location = new System.Drawing.Point(408, 390);
+            this.buttonAddHours.Location = new System.Drawing.Point(449, 386);
+            this.buttonAddHours.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddHours.Name = "buttonAddHours";
-            this.buttonAddHours.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddHours.Size = new System.Drawing.Size(67, 22);
             this.buttonAddHours.TabIndex = 3;
             this.buttonAddHours.Text = "Add Hours";
             this.buttonAddHours.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteTask
             // 
-            this.buttonDeleteTask.Location = new System.Drawing.Point(489, 389);
+            this.buttonDeleteTask.Location = new System.Drawing.Point(530, 385);
+            this.buttonDeleteTask.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteTask.Name = "buttonDeleteTask";
-            this.buttonDeleteTask.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteTask.Size = new System.Drawing.Size(51, 23);
             this.buttonDeleteTask.TabIndex = 2;
             this.buttonDeleteTask.Text = "Delete";
             this.buttonDeleteTask.UseVisualStyleBackColor = true;
+            this.buttonDeleteTask.Click += new System.EventHandler(this.buttonDeleteTask_Click);
             // 
             // buttonCreateTask
             // 
-            this.buttonCreateTask.Location = new System.Drawing.Point(570, 389);
+            this.buttonCreateTask.Location = new System.Drawing.Point(595, 384);
+            this.buttonCreateTask.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateTask.Name = "buttonCreateTask";
-            this.buttonCreateTask.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreateTask.Size = new System.Drawing.Size(52, 23);
             this.buttonCreateTask.TabIndex = 1;
             this.buttonCreateTask.Text = "New";
             this.buttonCreateTask.UseVisualStyleBackColor = true;
             this.buttonCreateTask.Click += new System.EventHandler(this.buttonCreateTask_Click);
             // 
-            // dataGridView1
+            // taskGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.taskGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.taskGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTask,
             this.ColumnCategory,
             this.ColumnReq,
             this.ColumnUser,
             this.ColumnHours});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(642, 381);
-            this.dataGridView1.TabIndex = 0;
+            this.taskGridView.Location = new System.Drawing.Point(2, 2);
+            this.taskGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.taskGridView.Name = "taskGridView";
+            this.taskGridView.Size = new System.Drawing.Size(645, 379);
+            this.taskGridView.TabIndex = 0;
             // 
             // ColumnTask
             // 
@@ -632,24 +539,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 459);
+            this.ClientSize = new System.Drawing.Size(915, 464);
             this.Controls.Add(this.tabControlHours);
             this.Controls.Add(this.projectOverview);
-            this.tabControlHours.Location = new System.Drawing.Point(474, 25);
-            this.tabControlHours.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabControlHours.Name = "tabControlHours";
-            this.tabControlHours.SelectedIndex = 0;
-            this.tabControlHours.Size = new System.Drawing.Size(1318, 848);
-            this.tabControlHours.TabIndex = 1;
-            // 
-            // Form2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1808, 883);
-            this.Controls.Add(this.tabControlHours);
-            this.Controls.Add(this.projectOverview);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form2";
             this.Text = "Project Manager 2016";
             this.projectOverview.ResumeLayout(false);
@@ -664,8 +556,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabControlHours.ResumeLayout(false);
             this.tabTask.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-
+            ((System.ComponentModel.ISupportInitialize)(this.taskGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -715,7 +606,7 @@
         private System.Windows.Forms.TabPage tabTask;
         private System.Windows.Forms.Button buttonDeleteTask;
         private System.Windows.Forms.Button buttonCreateTask;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView taskGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnReq;
