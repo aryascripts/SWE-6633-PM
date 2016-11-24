@@ -20,14 +20,15 @@ namespace ProjectManagementTool {
 		 * 
 		 * Please read all comments in "AddTeamMember.cs" for more clarification
 		*/
-
 		Project currentProject;
+        DataManagement data;
+        List<Requirement> reqs;
 
-        public CreateRequirement()
+        public CreateRequirement(Project p)
         {
             InitializeComponent();
 
-			//currentProject = p;
+			currentProject = p;
         }
 
         private void comboBoxReqType_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,14 +45,20 @@ namespace ProjectManagementTool {
         {
             DataManagement data = new DataManagement();
             //Parses the text from the Requirements Category text box into an enum
-            RequirementCategory reqCat = (RequirementCategory) Enum.Parse(typeof(RequirementCategory), comboBoxReqType.Text);
+            string reqCatText = this.comboBoxReqType.Text;
+            RequirementCategory reqCat;
+            if (string.Compare(reqCatText,"Functional") == 0)
+            {
+                reqCat = (RequirementCategory)Enum.Parse(typeof(RequirementCategory), "FUNCTIONAL");
+            }else
+            {
+                reqCat = (RequirementCategory)Enum.Parse(typeof(RequirementCategory), "NONFUNCTIONAL");
+            }
             //Creates the requirement object
-            Requirement reqOut = new ProjectManagementTool.Requirement(reqDescription.Text, Convert.ToInt32(comboBoxReqPriority.Text), reqCat);
-			// data.addRequirement(reqOut); REMOVE THIS LINE.
-
-			//WE NEED TO DO THIS: 
-			//currentProject.addRequirement(reqOut)
-			//data.updateProject(currentProject);
+            Requirement reqOut = new ProjectManagementTool.Requirement(this.reqDescription.Text, Convert.ToInt32(this.comboBoxReqPriority.Text), reqCat);
+            //Adds new requirement to the project and updates the save file
+            currentProject.addRequirement(reqOut);
+			data.updateProject(currentProject);
             this.Close();
         }
     }

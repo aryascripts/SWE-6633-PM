@@ -174,10 +174,9 @@ namespace ProjectManagementTool {
 
         private void buttonNewRequirement_Click(object sender, EventArgs e)
         {
-			//var addReqs = new CreateRequirement(currentProject);
-			var addReqs = new CreateRequirement();
+			var addReqs = new CreateRequirement(currentProject);
             addReqs.ShowDialog();
-            addReqsToList();
+            updateReqs();
 			updateHomePage();
 		}
 
@@ -185,10 +184,24 @@ namespace ProjectManagementTool {
 		//Then use currentProject.requirements which holds all the requirements to get
 		//each Requirement.
 
-		private void addReqsToList()
+		private void updateReqs()
         {
-            List<Requirement> reqList = new List<Requirement>();
+            List<Requirement> reqList = currentProject.requirements;
+            var datagrid = this.dataGridRequirements;
 
+            datagrid.Rows.Clear();
+            //datagrid.ColumnCount = 3;
+            //datagrid.Columns[0].Name = "Priority";
+            //datagrid.Columns[1].Name = "Category";
+            //datagrid.Columns[2].Name = "Description";
+
+            string[] req;
+            foreach (Requirement r in reqList)
+            {
+                req = new string[] { r.description, Convert.ToString(r.cat), Convert.ToString(r.priority)  };
+                datagrid.Rows.Add(req);
+            }
+            datagrid.AutoResizeColumns();
         }
 
 

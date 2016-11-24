@@ -52,7 +52,7 @@
             // textBoxSummary
             // 
             this.textBoxSummary.Location = new System.Drawing.Point(522, 92);
-            this.textBoxSummary.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxSummary.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxSummary.Multiline = true;
             this.textBoxSummary.Name = "textBoxSummary";
             this.textBoxSummary.Size = new System.Drawing.Size(256, 35);
@@ -71,7 +71,7 @@
             // reqDescription
             // 
             this.reqDescription.Location = new System.Drawing.Point(522, 204);
-            this.reqDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reqDescription.Margin = new System.Windows.Forms.Padding(6);
             this.reqDescription.Multiline = true;
             this.reqDescription.Name = "reqDescription";
             this.reqDescription.Size = new System.Drawing.Size(256, 169);
@@ -79,12 +79,13 @@
             // 
             // comboBoxReqType
             // 
+            this.comboBoxReqType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxReqType.FormattingEnabled = true;
             this.comboBoxReqType.Items.AddRange(new object[] {
             "Functional",
             "Non Functional"});
             this.comboBoxReqType.Location = new System.Drawing.Point(522, 431);
-            this.comboBoxReqType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxReqType.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxReqType.Name = "comboBoxReqType";
             this.comboBoxReqType.Size = new System.Drawing.Size(256, 33);
             this.comboBoxReqType.TabIndex = 4;
@@ -102,6 +103,7 @@
             // 
             // comboBoxReqPriority
             // 
+            this.comboBoxReqPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxReqPriority.FormattingEnabled = true;
             this.comboBoxReqPriority.Items.AddRange(new object[] {
             "1",
@@ -115,7 +117,7 @@
             "9",
             "10"});
             this.comboBoxReqPriority.Location = new System.Drawing.Point(522, 556);
-            this.comboBoxReqPriority.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxReqPriority.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxReqPriority.Name = "comboBoxReqPriority";
             this.comboBoxReqPriority.Size = new System.Drawing.Size(256, 33);
             this.comboBoxReqPriority.TabIndex = 6;
@@ -134,7 +136,7 @@
             // buttonReqSave
             // 
             this.buttonReqSave.Location = new System.Drawing.Point(564, 638);
-            this.buttonReqSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonReqSave.Margin = new System.Windows.Forms.Padding(6);
             this.buttonReqSave.Name = "buttonReqSave";
             this.buttonReqSave.Size = new System.Drawing.Size(150, 44);
             this.buttonReqSave.TabIndex = 8;
@@ -156,7 +158,7 @@
             this.Controls.Add(this.labelReqDescription);
             this.Controls.Add(this.textBoxSummary);
             this.Controls.Add(this.labelReqSummary);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CreateRequirement";
             this.Text = "CreateRequirement";
             this.ResumeLayout(false);
