@@ -42,6 +42,11 @@ namespace ProjectManagementTool {
 			requirements.Add(r);
 		}
 
+        public void removeRequirement (Requirement r)
+        {
+            requirements.Remove(r);
+        }
+
 		public void addRisk(Risk r) {
 			risks.Add(r);
 		}

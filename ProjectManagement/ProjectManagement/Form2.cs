@@ -204,11 +204,26 @@ namespace ProjectManagementTool {
             datagrid.AutoResizeColumns();
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            var datagrid = this.dataGridRequirements;
+
+            foreach (DataGridViewRow r in datagrid.SelectedRows)
+            {
+                string reqCatText = Convert.ToString(r.Cells[2].Value);
+                RequirementCategory reqCat = (RequirementCategory)Enum.Parse(typeof(RequirementCategory), reqCatText);
+                Requirement tempreq = new Requirement(Convert.ToString(r.Cells[0].Value), Convert.ToInt32(r.Cells[1].Value), reqCat);
+                currentProject.removeRequirement(tempreq);
+            }
+            updateReqs();
+            updateHomePage();
+        }
 
 
 
-		//MISC STUFF IDK
-		private void groupBox1_Enter(object sender, EventArgs e) {
+
+        //MISC STUFF IDK
+        private void groupBox1_Enter(object sender, EventArgs e) {
 
 		}
 
@@ -236,5 +251,7 @@ namespace ProjectManagementTool {
 			getLatestProjectFromDatabase();
 			refresh();
 		}
-	}
+
+        
+    }
 }
