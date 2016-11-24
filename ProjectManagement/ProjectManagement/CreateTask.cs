@@ -30,7 +30,6 @@ namespace ProjectManagementTool {
         {
             var addUserTask = new AddTeamMember(currentProject);
             addUserTask.ShowDialog();
-            refreshTeamMembers();
         }
 
 

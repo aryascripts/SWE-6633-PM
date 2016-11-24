@@ -58,7 +58,6 @@ namespace ProjectManagementTool {
 			this.Hide();
 			var form2 = new Form2(allProjects[this.projectsDataGrid.CurrentCell.RowIndex]);
 			form2.Show();
-			this.Close();
 
 		}
 

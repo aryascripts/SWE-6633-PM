@@ -8,23 +8,19 @@ using System.Threading.Tasks;
 namespace ProjectManagementTool {
 	public class Risk {
 
-		[BsonId]
-		public Guid RiskId { get; set; }
-		public String description { get; private set; }
-		public float likelihood { get; private set; }
-		public float mitigation { get; private set; }
+		public String description { get; set; }
+		public float likelihood { get; set; }
+		public int priority { get; set; }
 
 		public Risk() {
 			description = null;
 			likelihood = 0;
-			mitigation = 0;
-			RiskId = Guid.NewGuid();
 		}
 
-		public Risk(string d, float l, float m) {
+		public Risk(string d, float l, int p) {
 			description = d;
 			likelihood = l;
-			mitigation = m;
+			priority = p;
 		}
 	}
 }

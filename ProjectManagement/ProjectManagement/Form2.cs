@@ -68,6 +68,28 @@ namespace ProjectManagementTool {
 			currentProject = data.getProject(currentProject.ProjectID);
 			initializeProjectProperties();
 			refreshTeamMembers();
+			updateHomePage();
+			populateRiskDataGrid();
+		}
+
+		//Update the home page with all the details of the currentProject
+		public void updateHomePage() {
+			getLatestProjectFromDatabase();
+
+			this.UI_MemberCount.Text = "" + currentProject.team.Count;
+			this.UI_RiskCount.Text = "" + currentProject.risks.Count;
+
+		}
+
+		private void populateRiskDataGrid() {
+			var d = this.UI_RiskDataGrid;
+
+			string[] row;
+
+			foreach (Risk r in currentProject.risks) {
+				row = new string[] { r.description, "" + r.likelihood, "" + r.priority };
+				d.Rows.Add(row);
+			}
 		}
 
 		public void getLatestProjectFromDatabase() {
@@ -187,7 +209,14 @@ namespace ProjectManagementTool {
         private void buttonDeleteTask_Click(object sender, EventArgs e)
         {
             currentRequirement.removeTask(currentRequirement.tasks[this.taskGridView.SelectedCells[0].RowIndex]);
-            data.updateProject();
+			getLatestProjectFromDatabase();
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e) {
+			var createRisk = new CreateRisk(currentProject);
+			createRisk.ShowDialog();
+			getLatestProjectFromDatabase();
+			refresh();
+		}
+	}
 }
