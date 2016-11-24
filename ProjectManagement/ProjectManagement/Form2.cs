@@ -58,6 +58,8 @@ namespace ProjectManagementTool {
 			initializeTeamTab();
 			refreshTeamMembers();
 			initializeProjectProperties();
+			populateRiskDataGrid();
+			updateHomePage();
 		}
 
 		//Anything that needs to update AFTER the initial start.
@@ -131,6 +133,7 @@ namespace ProjectManagementTool {
 			var addTeamMember = new AddTeamMember(currentProject);
 			addTeamMember.ShowDialog();
 			refreshTeamMembers();
+			updateHomePage();
 		}
 
 		private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e) {
@@ -163,6 +166,7 @@ namespace ProjectManagementTool {
 
             var addTask = new CreateTask();
             addTask.ShowDialog();
+			updateHomePage();
 		}
            
             
@@ -174,7 +178,8 @@ namespace ProjectManagementTool {
 			var addReqs = new CreateRequirement();
             addReqs.ShowDialog();
             addReqsToList();
-        }
+			updateHomePage();
+		}
 
 		//Update the current project: getLatestProjectFromDatabase();
 		//Then use currentProject.requirements which holds all the requirements to get
