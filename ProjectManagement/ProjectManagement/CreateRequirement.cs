@@ -43,7 +43,7 @@ namespace ProjectManagementTool {
 
         private void buttonReqSave_Click(object sender, EventArgs e)
         {
-            DataManagement data = new DataManagement();
+            data = new DataManagement();
             //Parses the text from the Requirements Category text box into an enum
             string reqCatText = this.comboBoxReqType.Text;
             RequirementCategory reqCat;
@@ -61,5 +61,6 @@ namespace ProjectManagementTool {
 			data.updateProject(currentProject);
             this.Close();
         }
+
     }
 }

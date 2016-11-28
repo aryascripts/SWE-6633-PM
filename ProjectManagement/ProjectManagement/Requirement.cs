@@ -15,10 +15,10 @@ namespace ProjectManagementTool {
 
 		[BsonId]
 		public ObjectId RequirementId { get; set; }
-		public String description { get; private set; }
-		public int priority { get; private set; }
-		public List<Task> tasks { get; private set; }
-		public RequirementCategory cat { get; private set; }
+		public String description { get;  set; }
+		public int priority { get;  set; }
+		public List<Task> tasks { get;  set; }
+		public RequirementCategory cat { get;  set; }
 
 		public Requirement() {
 			description = null;
