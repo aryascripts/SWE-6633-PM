@@ -15,11 +15,10 @@ namespace ProjectManagementTool {
 		/*	currentProject always stores the most updated information about the current Project loaded. Always make sure that you sync this with the database by calling data.updateProject(currentProject) after making changes to this local variable.
 			teamGridView is a shorter name for the DataGridView displaying team members. 
 			data is how you access the DataManagement class for retreiving information from and save to the database. */
-		
-		private Project currentProject; 
+
+		private Project currentProject;
 		private DataGridView teamGridView;
 		private DataManagement data;
-        private Requirement currentRequirement;
 
 		/* CONSTRUCTOR.
 			This is when a NEW project is created. Dummy text is applied to project properties
@@ -51,16 +50,11 @@ namespace ProjectManagementTool {
 		//Anything that you need to run the FIRST time the Form loads, things like initialize the column names,
 		//refresh some data, make a new method for it, and add it here so it is updated. 
 		private void init() {
-			
+
 			teamGridView = this.UI_teamDataGrid;
 			this.UI_projectDescription.ReadOnly = true;
 
-			initializeTeamTab();
-			refreshTeamMembers();
-			initializeProjectProperties();
-			populateRiskDataGrid();
-			updateHomePage();
-            updateReqs();
+			refresh();
 		}
 
 		//Anything that needs to update AFTER the initial start.
@@ -69,22 +63,23 @@ namespace ProjectManagementTool {
 		//just update the team members list. No need to update the whole window if everything else stayed the same.
 		public void refresh() {
 			currentProject = data.getProject(currentProject.ProjectID);
-			initializeProjectProperties();
+			initializeTeamTab();
 			refreshTeamMembers();
+			initializeProjectProperties();
+			updateRisksPage();
 			updateHomePage();
-			populateRiskDataGrid();
+			updateRequirementsPage();
+			updateTasksPage();
 		}
 
 		//Update the home page with all the details of the currentProject
 		public void updateHomePage() {
 			getLatestProjectFromDatabase();
-
 			this.UI_MemberCount.Text = "" + currentProject.team.Count;
 			this.UI_RiskCount.Text = "" + currentProject.risks.Count;
-
 		}
 
-		private void populateRiskDataGrid() {
+		private void updateRisksPage() {
 			var d = this.UI_RiskDataGrid;
 
 			string[] row;
@@ -106,12 +101,12 @@ namespace ProjectManagementTool {
 			this.UI_projectLabel.Text = currentProject.projectName;
 			this.UI_projectOwner.Text = currentProject.projectOwner.fName + " " + currentProject.projectOwner.lName;
 		}
-		
+
 		//Adds columns to the team tab. 
 		//These are them populated by "refreshTeamMembers"
 		private void initializeTeamTab() {
 			teamGridView.ReadOnly = true;
-			 
+
 			teamGridView.ColumnCount = 3;
 			teamGridView.Columns[0].Name = "First";
 			teamGridView.Columns[1].Name = "Last ";
@@ -124,8 +119,8 @@ namespace ProjectManagementTool {
 			teamGridView.Rows.Clear();
 			string[] row;
 
-			foreach(Person p in currentProject.team) {
-				row = new string[] {p.fName, p.lName, p.title};
+			foreach (Person p in currentProject.team) {
+				row = new string[] { p.fName, p.lName, p.title };
 				teamGridView.Rows.Add(row);
 			}
 		}
@@ -164,20 +159,23 @@ namespace ProjectManagementTool {
 		}
 
 		private void buttonCreateTask_Click(object sender, EventArgs e) {
+			int index = this.UI_TasksTabReqs.SelectedCells[0].RowIndex;
+			var addTask = new CreateTask(currentProject, index);
+			addTask.ShowDialog();
 
-            var addTask = new CreateTask();
-            addTask.ShowDialog();
+			getLatestProjectFromDatabase();
 			updateHomePage();
+			updateTasksPage();
+			updateTasksTabTasks();
 		}
-           
-            
-        // Implementation code for Requirements Tab
 
-        private void buttonNewRequirement_Click(object sender, EventArgs e)
-        {
+
+		// Implementation code for Requirements Tab
+
+		private void buttonNewRequirement_Click(object sender, EventArgs e) {
 			var addReqs = new CreateRequirement(currentProject);
-            addReqs.ShowDialog();
-            updateReqs();
+			addReqs.ShowDialog();
+			updateRequirementsPage();
 			updateHomePage();
 		}
 
@@ -185,41 +183,79 @@ namespace ProjectManagementTool {
 		//Then use currentProject.requirements which holds all the requirements to get
 		//each Requirement.
 
-		private void updateReqs()
-        {
-            List<Requirement> reqList = currentProject.requirements;
-            var datagrid = this.dataGridRequirements;
+		private void updateRequirementsPage() {
+			List<Requirement> reqList = currentProject.requirements;
+			var datagrid = this.dataGridRequirements;
 
-            datagrid.Rows.Clear();
+			datagrid.Rows.Clear();
 
-            string[] req;
-            foreach (Requirement r in reqList)
-            {
-                req = new string[] { r.description, Convert.ToString(r.cat), Convert.ToString(r.priority)  };
-                datagrid.Rows.Add(req);
-            }
-            datagrid.AutoResizeColumns();
-        }
+			string[] req;
+			foreach (Requirement r in reqList) {
+				req = new string[] { r.description, Convert.ToString(r.cat), Convert.ToString(r.priority) };
+				datagrid.Rows.Add(req);
+			}
+			datagrid.AutoResizeColumns();
+			updateTasksPage();
+		}
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-  /*          var datagrid = this.dataGridRequirements;
+		private void deleteBtn_Click(object sender, EventArgs e) {
+			/*          var datagrid = this.dataGridRequirements;
 
-            foreach (DataGridViewRow r in datagrid.SelectedRows)
-            {
-                string reqCatText = Convert.ToString(r.Cells[2].Value);
-                RequirementCategory reqCat = (RequirementCategory)Enum.Parse(typeof(RequirementCategory), reqCatText);
-                Requirement tempreq = new Requirement(Convert.ToString(r.Cells[0].Value), Convert.ToInt32(r.Cells[1].Value), reqCat);
-                currentProject.removeRequirement(tempreq);
-            } */
+					  foreach (DataGridViewRow r in datagrid.SelectedRows)
+					  {
+						  string reqCatText = Convert.ToString(r.Cells[2].Value);
+						  RequirementCategory reqCat = (RequirementCategory)Enum.Parse(typeof(RequirementCategory), reqCatText);
+						  Requirement tempreq = new Requirement(Convert.ToString(r.Cells[0].Value), Convert.ToInt32(r.Cells[1].Value), reqCat);
+						  currentProject.removeRequirement(tempreq);
+					  } */
 
-            currentProject.removeRequirement(currentProject.requirements[this.dataGridRequirements.SelectedCells[0].RowIndex]);
-            data.updateProject(currentProject);
-            updateReqs();
-            updateHomePage();
-        }
-        //MISC STUFF IDK
-        private void groupBox1_Enter(object sender, EventArgs e) {
+			currentProject.removeRequirement(currentProject.requirements[this.dataGridRequirements.SelectedCells[0].RowIndex]);
+			data.updateProject(currentProject);
+			updateRequirementsPage();
+			updateHomePage();
+		}
+
+		//TASKS TAB CODE
+		private void updateTasksPage() {
+			getLatestProjectFromDatabase();
+			this.UI_TasksTabTasks.Rows.Clear();
+			this.UI_TasksTabReqs.Rows.Clear();
+
+			string[] row;
+			foreach(Requirement r in currentProject.requirements) {
+				row = new string[] { r.description };
+				this.UI_TasksTabReqs.Rows.Add(row);
+			}
+		}
+
+		private void button2_Click(object sender, EventArgs e) {
+			var createRisk = new CreateRisk(currentProject);
+			createRisk.ShowDialog();
+			getLatestProjectFromDatabase();
+			refresh();
+		}
+
+		private void UI_TasksTabReqs_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+			updateTasksTabTasks();
+		}
+
+		private void updateTasksTabTasks() {
+			int reqIndex = this.UI_TasksTabReqs.SelectedCells[0].RowIndex;
+
+			DataGridView tasksGrid = this.UI_TasksTabTasks;
+			tasksGrid.Rows.Clear();
+			string[] row; //name, hours, description, owner, category
+
+			if(currentProject.requirements[reqIndex].tasks.Count > 0) {
+				foreach (Task t in currentProject.requirements[reqIndex].tasks) {
+					row = new string[] { t.name, t.getHours()+ "", t.description, t.taskOwner.fName + " " + t.taskOwner.lName, t.category + "" };
+					tasksGrid.Rows.Add(row);
+				}
+			}
+		}
+
+		//MISC STUFF IDK
+		private void groupBox1_Enter(object sender, EventArgs e) {
 
 		}
 
@@ -235,19 +271,8 @@ namespace ProjectManagementTool {
 
 		}
 
-        private void buttonDeleteTask_Click(object sender, EventArgs e)
-        {
-            currentRequirement.removeTask(currentRequirement.tasks[this.taskGridView.SelectedCells[0].RowIndex]);
-			getLatestProjectFromDatabase();
-        }
+		private void buttonDeleteTask_Click(object sender, EventArgs e) {
 
-		private void button2_Click(object sender, EventArgs e) {
-			var createRisk = new CreateRisk(currentProject);
-			createRisk.ShowDialog();
-			getLatestProjectFromDatabase();
-			refresh();
 		}
-
-        
-    }
+	}
 }

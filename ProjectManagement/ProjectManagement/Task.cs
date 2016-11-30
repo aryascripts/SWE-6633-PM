@@ -16,21 +16,21 @@ namespace ProjectManagementTool {
 	}
 
 	public class Task {
-		[BsonId]
-		public Guid TaskId;
+		public string name { get; set; }
 		public string description { get; set; }
-		public Person taskOwner { get; private set; }
-		public TaskCategory category { get; private set; }
+		public Person taskOwner { get; set; }
+		public TaskCategory category { get; set; }
 		public float hoursExpended;
 
 		public Task() {
+			name = null;
 			description = null;
 			taskOwner = null;
 			hoursExpended = 0;
-			TaskId = Guid.NewGuid();
 		}
 
-		public Task(string desc, Person owner, TaskCategory cat, float hours) {
+		public Task(string name, string desc, Person owner, TaskCategory cat, float hours) {
+			this.name = name;
 			description = desc;
 			taskOwner = owner;
 			category = cat;

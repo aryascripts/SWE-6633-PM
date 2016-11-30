@@ -22,7 +22,6 @@ namespace ProjectManagementTool {
 		*/
 		Project currentProject;
         DataManagement data;
-        List<Requirement> reqs;
 
         public CreateRequirement(Project p)
         {

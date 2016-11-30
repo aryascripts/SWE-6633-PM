@@ -13,8 +13,6 @@ namespace ProjectManagementTool {
 
 	public class Requirement {
 
-		[BsonId]
-		public ObjectId RequirementId { get; set; }
 		public String description { get;  set; }
 		public int priority { get;  set; }
 		public List<Task> tasks { get;  set; }
@@ -24,7 +22,6 @@ namespace ProjectManagementTool {
 			description = null;
 			priority = 0;
 			tasks = new List<Task>();
-			RequirementId = ObjectId.NewObjectId();
 		}
 
 		public Requirement(String desc, int priorityIn, RequirementCategory cat) {

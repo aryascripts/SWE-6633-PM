@@ -30,7 +30,6 @@ namespace ProjectManagementTool {
 			var addPersonForm = new AddPerson();
 			addPersonForm.ShowDialog();
 			fillPersonDataGrid();
-
 		}
 
 		//This fills the database with all current PERSONS in the database.
