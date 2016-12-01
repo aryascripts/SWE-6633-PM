@@ -92,10 +92,15 @@ namespace ProjectManagementTool {
 				var projectsCollection = db.GetCollection<Project>("projects");
 
 				project = projectsCollection.FindById((BsonValue)x);
-
-				Console.WriteLine(project.projectDescription);
 			}
 			return project;
+		}
+
+		public void deleteProject(Project p) {
+			using (var db = new LiteDatabase(database)) {
+				var projectsCollection = db.GetCollection<Project>("projects");
+				projectsCollection.Delete((BsonValue)p.ProjectID);
+			}
 		}
 	}
 }

@@ -50,12 +50,7 @@ namespace ProjectManagementTool {
 		//Anything that you need to run the FIRST time the Form loads, things like initialize the column names,
 		//refresh some data, make a new method for it, and add it here so it is updated. 
 		private void init() {
-
 			teamGridView = this.UI_teamDataGrid;
-			this.UI_projectDescription.ReadOnly = true;
-
-			Console.WriteLine(currentProject.requirements[0].tasks[0].toString());
-
 			refresh();
 		}
 
@@ -77,8 +72,64 @@ namespace ProjectManagementTool {
 		//Update the home page with all the details of the currentProject
 		public void updateHomePage() {
 			getLatestProjectFromDatabase();
+
+			float functionalHrs = 0;
+			float nonFunctionalHrs = 0;
+
+			float designHrs = 0;
+			float codingHrs = 0;
+			float reqAnalysisHrs = 0;
+			float testingHrs = 0;
+			float pmHrs = 0;
+
+			int taskCount = 0;
+
 			this.UI_MemberCount.Text = "" + currentProject.team.Count;
 			this.UI_RiskCount.Text = "" + currentProject.risks.Count;
+			this.UI_ReqCount.Text = "" + currentProject.requirements.Count;
+			
+			foreach(Requirement req in currentProject.requirements) {
+				foreach(Task task in req.tasks) {
+
+					taskCount++;
+
+					if (req.cat == RequirementCategory.FUNCTIONAL) {
+						functionalHrs += task.getHours();
+					} else {
+						nonFunctionalHrs += task.getHours();
+					}
+
+					switch(task.category) {
+						case TaskCategory.DESIGN:
+							designHrs += task.getHours();
+							break;
+						case TaskCategory.CODING:
+							codingHrs += task.getHours();
+							break;
+						case TaskCategory.REQ_ANALYSIS:
+							reqAnalysisHrs += task.getHours();
+							break;
+						case TaskCategory.TESTING:
+							testingHrs += task.getHours();
+							break;
+						case TaskCategory.PM:
+							pmHrs += task.getHours();
+							break;
+					}
+				}
+			}
+
+			this.UI_TaskCount.Text = ""+taskCount;
+
+			this.UI_HrsTotal.Text = (functionalHrs + nonFunctionalHrs) + "";
+			this.UI_HrsFunctional.Text = functionalHrs + "";
+			this.UI_HrsNonFunctional.Text = nonFunctionalHrs + "";
+
+			this.UI_HrsCoding.Text = codingHrs+"";
+			this.UI_HrsDesign.Text = designHrs+"";
+			this.UI_HrsPM.Text = pmHrs + "";
+			this.UI_HrsReqAnalysis.Text = reqAnalysisHrs + "";
+			this.UI_HrsTesting.Text = testingHrs + "";
 		}
 
 		private void updateRisksPage() {
@@ -90,6 +141,7 @@ namespace ProjectManagementTool {
 				row = new string[] { r.description, "" + r.likelihood, "" + r.priority };
 				d.Rows.Add(row);
 			}
+			d.AutoResizeColumns();
 		}
 
 		public void getLatestProjectFromDatabase() {
@@ -125,6 +177,7 @@ namespace ProjectManagementTool {
 				row = new string[] { p.fName, p.lName, p.title };
 				teamGridView.Rows.Add(row);
 			}
+			teamGridView.AutoResizeColumns();
 		}
 
 		private void buttonCreateUser_Click(object sender, EventArgs e) {
@@ -256,23 +309,8 @@ namespace ProjectManagementTool {
 					tasksGrid.Rows.Add(row);
 				}
 			}
-		}
 
-		//MISC STUFF IDK
-		private void groupBox1_Enter(object sender, EventArgs e) {
-
-		}
-
-		private void tabPage2_Click(object sender, EventArgs e) {
-
-		}
-
-		private void tabPage1_Click(object sender, EventArgs e) {
-
-		}
-
-		private void label1_Click(object sender, EventArgs e) {
-
+			tasksGrid.AutoResizeColumns();
 		}
 
 		private void buttonDeleteTask_Click(object sender, EventArgs e) {
@@ -296,7 +334,13 @@ namespace ProjectManagementTool {
 			var addHrsWindow = new AddTaskHours(currentProject, reqIndex, taskIndex);
 			addHrsWindow.ShowDialog();
 			updateTasksTabTasks();
-			
+			updateHomePage();
+		}
+
+		private void UI_NewProjectBtn_Click(object sender, EventArgs e) {
+			Form1 form = new Form1();
+			form.Show();
+			this.Close();
 		}
 	}
 }

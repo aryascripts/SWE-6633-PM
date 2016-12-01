@@ -113,6 +113,7 @@
 			this.Controls.Add(this.textBoxLastName);
 			this.Controls.Add(this.textBoxFirstName);
 			this.Controls.Add(this.labelMemberName);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(311, 158);
 			this.MinimumSize = new System.Drawing.Size(311, 158);

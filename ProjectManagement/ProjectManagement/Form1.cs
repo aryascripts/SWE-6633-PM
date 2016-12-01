@@ -20,16 +20,16 @@ namespace ProjectManagementTool {
 	public partial class Form1 : Form {
 		DataManagement data;
 		List<Project> allProjects = new List<Project>();
+		int delCount = 0;
 
 		//Gets the all the projects from the database and sets fills the datagridview. 
 		public Form1() {
 			InitializeComponent();
 			data = new ProjectManagementTool.DataManagement();
-
 			allProjects = data.allProjects();
-
 			setUpDataGrid(allProjects);
-			
+			this.projectsDataGrid.AutoResizeColumns();
+
 		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -66,6 +66,7 @@ namespace ProjectManagementTool {
 		//then create a string[] which will become rows in the datagrid. 
 		private void setUpDataGrid(List<Project> projects) {
 			var dataGrid = this.projectsDataGrid;
+			dataGrid.Rows.Clear();
 
 			dataGrid.ReadOnly = true;
 
@@ -80,6 +81,27 @@ namespace ProjectManagementTool {
 			foreach(Project p in projects) {
 				row = new string[] { ""+i++, p.projectName, p.projectOwner.fName+" "+p.projectOwner.lName };
 				dataGrid.Rows.Add(row);
+			}
+			dataGrid.AutoResizeColumns();
+		}
+
+		private void UI_deleteBtn_Click(object sender, EventArgs e) {
+			if(delCount == 0) {
+				delCount++;
+				this.label1.Text = "Click Delete again to delete.";
+			}
+
+			else {
+				delCount = 0;
+				int index = this.projectsDataGrid.SelectedCells[0].RowIndex;
+
+				data.deleteProject(allProjects[index]);
+				allProjects.Clear();
+
+				allProjects = data.allProjects();
+				setUpDataGrid(allProjects);
+
+				this.label1.Text = "";
 			}
 		}
 	}
