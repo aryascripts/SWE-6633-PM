@@ -59,6 +59,12 @@
     <Compile Include="AddPerson.Designer.cs">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTaskHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTaskHours.Designer.cs">
+      <DependentUpon>AddTaskHours.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeamMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="Task.cs" />
     <EmbeddedResource Include="AddPerson.resx">
       <DependentUpon>AddPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTaskHours.resx">
+      <DependentUpon>AddTaskHours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeamMember.resx">
       <DependentUpon>AddTeamMember.cs</DependentUpon>

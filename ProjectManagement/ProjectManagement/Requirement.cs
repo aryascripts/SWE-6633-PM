@@ -38,6 +38,10 @@ namespace ProjectManagementTool {
 		public void removeTask(Task target) {
 			tasks.Remove(target);
 		}
+
+		public List<Task> getTasks() {
+			return tasks;
+		}
 	}
 }
 

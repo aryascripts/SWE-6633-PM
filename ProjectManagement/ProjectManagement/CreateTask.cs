@@ -42,7 +42,11 @@ namespace ProjectManagementTool {
 				cat = TaskCategory.PM;
 			}
 
-			Task t = new ProjectManagementTool.Task(this.UI_TaskName.Text, this.UI_TaskDescription.Text, selected, cat, float.Parse(this.UI_InitialHours.Text));
+			float hrs = (float)Convert.ToDouble(this.UI_InitialHours.Text);
+
+			Console.WriteLine(hrs+"");
+
+			Task t = new ProjectManagementTool.Task(this.UI_TaskName.Text, this.UI_TaskDescription.Text, selected, cat, hrs);
 
 			currentProject.requirements[index].tasks.Add(t);
 			data.updateProject(currentProject);

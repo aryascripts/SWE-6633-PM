@@ -54,6 +54,8 @@ namespace ProjectManagementTool {
 			teamGridView = this.UI_teamDataGrid;
 			this.UI_projectDescription.ReadOnly = true;
 
+			Console.WriteLine(currentProject.requirements[0].tasks[0].toString());
+
 			refresh();
 		}
 
@@ -246,9 +248,11 @@ namespace ProjectManagementTool {
 			tasksGrid.Rows.Clear();
 			string[] row; //name, hours, description, owner, category
 
+			List<Task> tasks = currentProject.requirements[reqIndex].getTasks();
+
 			if(currentProject.requirements[reqIndex].tasks.Count > 0) {
 				foreach (Task t in currentProject.requirements[reqIndex].tasks) {
-					row = new string[] { t.name, t.getHours()+ "", t.description, t.taskOwner.fName + " " + t.taskOwner.lName, t.category + "" };
+					row = new string[] { t.name, t.hoursExpended+"", t.description, t.taskOwner.fName + " " + t.taskOwner.lName, t.category + "" };
 					tasksGrid.Rows.Add(row);
 				}
 			}
@@ -272,7 +276,27 @@ namespace ProjectManagementTool {
 		}
 
 		private void buttonDeleteTask_Click(object sender, EventArgs e) {
+			DataGridView tasksGrid = this.UI_TasksTabTasks;
+			DataGridView reqGrid = this.UI_TasksTabReqs;
 
+			int reqIndex = reqGrid.SelectedCells[0].RowIndex;
+			int taskIndex = reqGrid.SelectedCells[0].RowIndex;
+
+			Task toRemove = currentProject.requirements[reqIndex].tasks[taskIndex];
+
+			currentProject.requirements[reqIndex].removeTask(toRemove);
+			updateTasksTabTasks();
+			data.updateProject(currentProject);
+		}
+
+		private void buttonAddHours_Click(object sender, EventArgs e) {
+			int reqIndex = this.UI_TasksTabTasks.SelectedCells[0].RowIndex;
+			int taskIndex = this.UI_TasksTabReqs.SelectedCells[0].RowIndex;
+
+			var addHrsWindow = new AddTaskHours(currentProject, reqIndex, taskIndex);
+			addHrsWindow.ShowDialog();
+			updateTasksTabTasks();
+			
 		}
 	}
 }

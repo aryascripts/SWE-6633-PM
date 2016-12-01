@@ -39,6 +39,7 @@
 			this.UI_addPersonBtn = new System.Windows.Forms.Button();
 			this.UI_InitialHours = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.UI_personDataGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -55,7 +56,7 @@
 			// UI_TaskName
 			// 
 			this.UI_TaskName.Location = new System.Drawing.Point(100, 37);
-			this.UI_TaskName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.UI_TaskName.Margin = new System.Windows.Forms.Padding(4);
 			this.UI_TaskName.Name = "UI_TaskName";
 			this.UI_TaskName.Size = new System.Drawing.Size(160, 22);
 			this.UI_TaskName.TabIndex = 1;
@@ -73,7 +74,7 @@
 			// UI_TaskDescription
 			// 
 			this.UI_TaskDescription.Location = new System.Drawing.Point(100, 69);
-			this.UI_TaskDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.UI_TaskDescription.Margin = new System.Windows.Forms.Padding(4);
 			this.UI_TaskDescription.Multiline = true;
 			this.UI_TaskDescription.Name = "UI_TaskDescription";
 			this.UI_TaskDescription.Size = new System.Drawing.Size(160, 100);
@@ -89,7 +90,7 @@
             "3 Testing",
             "4 Project Management"});
 			this.UI_TaskCategory.Location = new System.Drawing.Point(100, 188);
-			this.UI_TaskCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.UI_TaskCategory.Margin = new System.Windows.Forms.Padding(4);
 			this.UI_TaskCategory.Name = "UI_TaskCategory";
 			this.UI_TaskCategory.Size = new System.Drawing.Size(160, 24);
 			this.UI_TaskCategory.TabIndex = 4;
@@ -107,7 +108,7 @@
 			// buttonSaveTask
 			// 
 			this.buttonSaveTask.Location = new System.Drawing.Point(113, 627);
-			this.buttonSaveTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.buttonSaveTask.Margin = new System.Windows.Forms.Padding(4);
 			this.buttonSaveTask.Name = "buttonSaveTask";
 			this.buttonSaveTask.Size = new System.Drawing.Size(100, 28);
 			this.buttonSaveTask.TabIndex = 8;
@@ -152,11 +153,21 @@
 			this.label4.TabIndex = 11;
 			this.label4.Text = "Initial Hours";
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(303, 81);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(294, 17);
+			this.label5.TabIndex = 13;
+			this.label5.Text = "This window will be cleaned up at a later time.";
+			// 
 			// CreateTask
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(634, 668);
+			this.Controls.Add(this.label5);
 			this.Controls.Add(this.UI_InitialHours);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.UI_addPersonBtn);
@@ -169,7 +180,7 @@
 			this.Controls.Add(this.UI_TaskName);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "CreateTask";
 			this.Text = "CreateTask";
 			((System.ComponentModel.ISupportInitialize)(this.UI_personDataGrid)).EndInit();
@@ -191,5 +202,6 @@
 		private System.Windows.Forms.Button UI_addPersonBtn;
 		private System.Windows.Forms.TextBox UI_InitialHours;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label5;
 	}
 }

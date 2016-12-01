@@ -20,13 +20,9 @@ namespace ProjectManagementTool {
 		public string description { get; set; }
 		public Person taskOwner { get; set; }
 		public TaskCategory category { get; set; }
-		public float hoursExpended;
+		public float hoursExpended { get; set; }
 
 		public Task() {
-			name = null;
-			description = null;
-			taskOwner = null;
-			hoursExpended = 0;
 		}
 
 		public Task(string name, string desc, Person owner, TaskCategory cat, float hours) {
@@ -39,11 +35,14 @@ namespace ProjectManagementTool {
 
 		public void addHours(float hours) {
 			hoursExpended += hours;
-			return;
 		}
 
 		public float getHours() {
 			return hoursExpended;
+		}
+
+		public string toString() {
+			return name + " " + description + " " + taskOwner + " " + hoursExpended;
 		}
 	}
 }
